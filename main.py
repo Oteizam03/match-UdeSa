@@ -7,34 +7,40 @@ Created on Mon Jun  1 13:36:05 2026
 """
 
 import pandas as pd
-df = pd.read_excel("dataframe.xslx")
+df = pd.read_excel("dataframe.xlsx", dtype = {"id" : str, "sexo": str,
+                                              "nombre": str, "apellido": str, "carrera": str, 
+                                              "zona por la que vive": str, "hobbies": str,
+                                              "estilo musical favorito": str, "edad" : int, "altura": int,
+                                              "sexualidad": str, "instagram": str, "telefono": str}) #########
 
 def pedir_usuario(id_usuario):
   if len(id_usuario)!= 5:
     raise ValueError ("error, el numero de usuario no cumple con las caracteristicas solicitadas")
-  if id_usuario not in df["legajo"]:
+  if id_usuario not in df["legajo"]: #ver aca si es .values
     raise ValueError("Error, tu id no esta en nuestra base de datos, no sos alumno de UdeSa")
 
 def pedir_preferencias(edad_minima,edad_maxima, carrera_de_preferencia, altura_minima, altura_maxima, hobbie_de_interes, zona_de_interes, estilo_musical_de_preferencia):
 
   if edad_minima < 17 or edad_maxima > 30:
     raise ValueError ("edad no disponible para ser alumno de UdeSa")
-  if carrera_de_preferencia not in df["carrera"]:
+  if carrera_de_preferencia not in df["carrera"]: #ver aca si es .values
     raise ValueError("ERROR, esa carrera no es de UdeSa, anda a buscar el amor en otro lado")
   if altura_minima < 100 or altura_maxima > 230:
     raise ValueError ("ERROR, altura no valida")
-  if hobbie_de_interes not in df["hobbies"]:
+  if hobbie_de_interes not in df["hobbies"]: #ver aca si es .values
     raise ValueError("ERROR, ese hobbie no esta en la lista de opciones")
-  if zona_de_interes not in df["zona por la que vive"]:
+  if zona_de_interes not in df["zona por la que vive"]:       #ver aca si es .values
     raise ValueError("ERROR, zona no disponible entre las opciones que te di")
-  if estilo_musical_de_preferencia not in df["estilo musical favorito"]:
+  if estilo_musical_de_preferencia not in df["estilo musical favorito"]:    #ver aca si es .values
     raise ValueError("ERROR,el estilo musical no esta dentro de las opciones")
 
 
 
-#tenemos que forzar a que sean el tipio de dato que queremos porque nos sabemos como lo lee panda. edad y altura tiene que ser un int
 try:
   id_usuario = input("ingrese el numero de legajo, son 5 numeros: ") #en funcion 1
+  pedir_usuario(id_usuario) #############
+  
+  
   edad_minima = int(input("ingrese la edad minima con la que estas dispuesto a salir: ")) #en funcion 2
   edad_maxima = int(input("ingrese la edad maxima con la que estas dispuesto a salir: "))
   carrera_de_preferencia = input("ingrese la carrera que te gustaria que estudie el otro: ")
@@ -43,5 +49,43 @@ try:
   hobbie_de_interes = input("ingrese UN hobbie que prefieras que haga el otro(lectura, gaming, musica, arte, deporte): ")
   zona_de_interes = input("ingrese la zona en la que preferis que viva el otro (norte/centro/sur): ")
   estilo_musical_de_preferencia = input("ingrese el estilo musical que preferis del otro (pop/reggaeton/rock/cumbia/clasica): ")
+  
+  pedir_preferencias(edad_minima,  edad_maxima, carrera_de_preferencia, altura_minima, altura_maxima,  hobbie_de_interes, zona_de_interes, estilo_musical_de_preferencia) #######
+  
+#hola chicos, soy Mili, agrego un par de cosas, si creen que esta mal las pueden borrar (les puse ####### al final para que reconozcan lo nuevo)
 
 
+  fila = df[df["legajo"] == (id_usuario)] ###########
+  nombre = fila["nombre"].values[0] ########
+  apellido = fila["apellido"].values[0]  ###########
+  print("Bienvenido", nombre, apellido, "esperemos que encuentres el amor y seas feliz") ###########
+    
+except ValueError as e: ###########
+    print(e) ###########
+    
+else:
+    print("los datos fueron cargados correctamente") ###########
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
