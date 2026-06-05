@@ -1,3 +1,7 @@
+#que hacemos con este doc? lo borramos??
+
+
+
 import pandas as pd
 
 class Usuario:
@@ -20,36 +24,3 @@ class Usuario:
         #metodo: 
             
             
-            
-            
-            
-            
-            
-            
-chicos ahi arme la parte de sexualidad, despues hay que ubicarla bien 
-
- # HETEROSEXUAL
- 
-dedf calcular_compatibilidad_sexual (dentro de un metodo)
-    if self.sexualidad == "heterosexual":
-
-        if self.sexo == "F":
-            return otro.sexo == "M"
-
-        if self.sexo == "M":
-            return otro.sexo == "F"
-
-    # HOMOSEXUAL
-    elif self.sexualidad == "homosexual":
-
-        if self.sexo == "F":
-            return otro.sexo == "F"
-
-        if self.sexo == "M":
-            return otro.sexo == "M"
-
-    # BISEXUAL
-    elif self.sexualidad == "bisexual":
-        return otro.sexo in ["M", "F"]
-
-    return False
