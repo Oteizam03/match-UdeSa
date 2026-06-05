@@ -16,7 +16,7 @@ df = pd.read_excel("dataframe.xlsx", dtype = {"id" : str, "sexo": str,
 def pedir_usuario(id_usuario):
   if len(id_usuario)!= 5:
     raise ValueError ("error, el numero de usuario no cumple con las caracteristicas solicitadas")
-  if id_usuario not in df["legajo"]: #ver aca si es .values
+  if id_usuario not in df["id"]: #ver aca si es .values
     raise ValueError("Error, tu id no esta en nuestra base de datos, no sos alumno de UdeSa")
 
 def pedir_preferencias(edad_minima,edad_maxima, carrera_de_preferencia, altura_minima, altura_maxima, hobbie_de_interes, zona_de_interes, estilo_musical_de_preferencia):
@@ -37,7 +37,8 @@ def pedir_preferencias(edad_minima,edad_maxima, carrera_de_preferencia, altura_m
 
 
 try:
-  id_usuario = input("ingrese el numero de legajo, son 5 numeros: ") #en funcion 1
+  id_usuario = input("ingrese el numero de id/legajo, son 5 numeros: ") #en funcion 1
+  #llamado de funcion para validarla
   pedir_usuario(id_usuario) #############
   
   
@@ -50,12 +51,13 @@ try:
   zona_de_interes = input("ingrese la zona en la que preferis que viva el otro (norte/centro/sur): ")
   estilo_musical_de_preferencia = input("ingrese el estilo musical que preferis del otro (pop/reggaeton/rock/cumbia/clasica): ")
   
+  #llamado de funcion para validarla
   pedir_preferencias(edad_minima,  edad_maxima, carrera_de_preferencia, altura_minima, altura_maxima,  hobbie_de_interes, zona_de_interes, estilo_musical_de_preferencia) #######
   
 #hola chicos, soy Mili, agrego un par de cosas, si creen que esta mal las pueden borrar (les puse ####### al final para que reconozcan lo nuevo)
 
 
-  fila = df[df["legajo"] == (id_usuario)] ###########
+  fila = df[df["id"] == (id_usuario)] ###########
   nombre = fila["nombre"].values[0] ########
   apellido = fila["apellido"].values[0]  ###########
   print("Bienvenido", nombre, apellido, "esperemos que encuentres el amor y seas feliz") ###########
