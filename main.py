@@ -7,11 +7,13 @@ Created on Mon Jun  1 13:36:05 2026
 """
 
 import pandas as pd
-df = pd.read_excel("dataframe.xlsx", dtype = {"id" : str, "sexo": str,
+
+df = pd.read_excel("C:/Users/justo/OneDrive/Documentos/programación/match-UdeSa/datos/dataframe.xlsx", dtype = {"id" : str, "sexo": str,
                                               "nombre": str, "apellido": str, "carrera": str, 
                                               "zona por la que vive": str, "hobbies": str,
                                               "estilo musical favorito": str, "edad" : int, "altura": int,
                                               "sexualidad": str, "instagram": str, "telefono": str}) #########
+from src.filtrado import filtrar_usuarios
 
 def pedir_usuario(id_usuario):
   if len(id_usuario)!= 5:
@@ -69,8 +71,11 @@ else:
     print("los datos fueron cargados correctamente") ###########
     
 #aca podria algo que llame a una funcion en otro archivo, que tenga el filtrado y el match llamando a otros archivos    
-    
-    
+  
+fila = df[df["id"] == id_usuario].iloc[0]
+genero = fila["sexo"]
+sexualidad = fila["sexualidad"]
+print(filtrar_usuarios(genero, sexualidad, edad_minima, edad_maxima, altura_minima, id_usuario))  
     
     
     
