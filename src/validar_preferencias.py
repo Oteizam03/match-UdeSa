@@ -6,10 +6,10 @@ def validar_preferencias(altura_min, altura_max, edad_max, edad_min, hobbie, car
     
     Parametros: 
         altura_min: int
-        Numero que representa la altura minima que el match del usuario puede tener en cm. Debe ser <= 230.
+        Numero que representa la altura minima que el match del usuario puede tener en cm. Debe ser >= 130.
         
         altura_max: int 
-        Numero que representa la altura maxima que el match del usuario puede tener en cm. Debe ser >= 130.
+        Numero que representa la altura maxima que el match del usuario puede tener en cm. Debe ser <= 230.
         
         edad_max: int
         Numero que representa la edad maxima que el match del usuario puede tener. Debe ser <= 30.
