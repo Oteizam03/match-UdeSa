@@ -45,39 +45,23 @@ def pedir_preferencias(edad_minima,edad_maxima, carrera_de_preferencia, altura_m
 
 
 try:
-  id_usuario = input("ingrese el numero de id/legajo, son 5 numeros: ") #en funcion 1
-  #llamado de funcion para validarla
-  pedir_usuario(df, id_usuario) #############
-  
-  
-  edad_minima = int(input("ingrese la edad minima con la que estas dispuesto a salir: ")) #en funcion 2
-  edad_maxima = int(input("ingrese la edad maxima con la que estas dispuesto a salir: "))
-  carrera_de_preferencia = input("ingrese la carrera que te gustaria que estudie el otro: ")
-  altura_minima = int(input("ingrese la altura minima con el que estes dispuesto a salir: "))
-  altura_maxima = int(input("ingrese la altura maxima con el que estes dispuesto a salir: "))
-  hobbie_de_interes = input("ingrese UN hobbie que prefieras que haga el otro(lectura, gaming, musica, arte, deporte): ")
-  zona_de_interes = input("ingrese la zona en la que preferis que viva el otro (norte/centro/sur): ")
-  estilo_musical_de_preferencia = input("ingrese el estilo musical que preferis del otro (pop/reggaeton/rock/cumbia/clasica): ")
-  
-  #llamado de funcion para validarla
+  id_usuario = input("ingrese el numero de id/legajo, son 5 numeros: ") 
+  pedir_usuario(df, id_usuario) 
   pedir_preferencias(edad_minima,  edad_maxima, carrera_de_preferencia, altura_minima, altura_maxima,  hobbie_de_interes, zona_de_interes, estilo_musical_de_preferencia) #######
   
-#hola chicos, soy Mili, agrego un par de cosas, si creen que esta mal las pueden borrar (les puse ####### al final para que reconozcan lo nuevo)
-
-
-  fila = df[df["id"] == (id_usuario)] ###########
-  nombre = fila["nombre"].values[0] ########
-  apellido = fila["apellido"].values[0]  ###########
-  print("Bienvenido", nombre, apellido, "esperemos que encuentres el amor y seas feliz") ###########
+  fila = df[df["id"] == (id_usuario)] 
+  nombre = fila["nombre"].values[0]
+  apellido = fila["apellido"].values[0]
+  print("Bienvenido", nombre, apellido, "esperemos que encuentres el amor y seas feliz") 
       
     
-except ValueError as e: ###########
-    print(e) ###########
+except ValueError as e:
+    print(e) 
     
 else:
-    print("los datos fueron cargados correctamente") ###########
+    print("los datos fueron cargados correctamente") 
     
-#aca podria algo que llame a una funcion en otro archivo, que tenga el filtrado y el match llamando a otros archivos    
+    
   
 fila = df[df["id"] == id_usuario].iloc[0]
 genero = fila["sexo"]
