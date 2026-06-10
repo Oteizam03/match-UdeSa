@@ -62,7 +62,7 @@ else:
     print("los datos fueron cargados correctamente") 
     
     
-  
+#esto deberia estar en filtrar usuarios 
 fila = df[df["id"] == id_usuario].iloc[0]
 genero = fila["sexo"]
 sexualidad = fila["sexualidad"]
