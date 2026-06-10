@@ -26,11 +26,6 @@ df = pd.read_excel(url,dtype = {"id" : str, "sexo": str,
 
 from src.filtrado import filtrar_usuarios
 
-def validar_usuario(id_usuario):
-  if len(id_usuario)!= 5:
-    raise ValueError ("error, el numero de usuario no cumple con las caracteristicas solicitadas")
-  if id_usuario not in df["id"]: #ver aca si es .values
-    raise ValueError("Error, tu id no esta en nuestra base de datos, no sos alumno de UdeSa")
 
 def pedir_preferencias(edad_minima,edad_maxima, carrera_de_preferencia, altura_minima, altura_maxima, hobbie_de_interes, zona_de_interes, estilo_musical_de_preferencia):
 
@@ -52,7 +47,7 @@ def pedir_preferencias(edad_minima,edad_maxima, carrera_de_preferencia, altura_m
 try:
   id_usuario = input("ingrese el numero de id/legajo, son 5 numeros: ") #en funcion 1
   #llamado de funcion para validarla
-  pedir_usuario(id_usuario) #############
+  pedir_usuario(df, id_usuario) #############
   
   
   edad_minima = int(input("ingrese la edad minima con la que estas dispuesto a salir: ")) #en funcion 2
