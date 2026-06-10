@@ -26,7 +26,7 @@ df = pd.read_excel(url,dtype = {"id" : str, "sexo": str,
 
 from src.filtrado import filtrar_usuarios
 
-def pedir_usuario(id_usuario):
+def validar_usuario(id_usuario):
   if len(id_usuario)!= 5:
     raise ValueError ("error, el numero de usuario no cumple con las caracteristicas solicitadas")
   if id_usuario not in df["id"]: #ver aca si es .values
