@@ -1,12 +1,17 @@
-def validar_preferencias(altura_min, altura_max, edad_max, edad_min, hobbie, carrera, estilo_musical, zona_donde_vive): 
+import pandas as pd
+
+def validar_preferencias(df, altura_min, altura_max, edad_max, edad_min, hobbie, carrera, estilo_musical, zona_donde_vive): 
 
     '''
     Verifica que las preferencias ingresadas por el usuario sean validas. /
     Si no lo son levanta un error con un mensaje especificando que sucedio. 
     
     Parametros: 
+        df: DataFrame 
+        Es un dataframe con todos los datos de los alumnos de UdeSa
+        
         altura_min: int
-        Numero que representa la altura minima que el match del usuario puede tener en cm. Debe ser >= 130.
+        Numero que representa la altura minima que el match del usuario puede tener en cm. Debe ser >= 100.
         
         altura_max: int 
         Numero que representa la altura maxima que el match del usuario puede tener en cm. Debe ser <= 230.
@@ -33,4 +38,19 @@ def validar_preferencias(altura_min, altura_max, edad_max, edad_min, hobbie, car
         ValueError: 
             Si alguno de los parametros no cumple con las validaciones correspondientes.
     '''
+    if altura_min < 100 or altura_max > 230:
+      raise ValueError ("ERROR, altura no valida, debe estar entre 100cm a 230cm")
+    if edad_min < 17 or edad_max > 30:
+      raise ValueError ("edad no disponible dentro de los alumnos de UdeSa")
+    if edad_min> edad_max: 
+        raise ValueError("ERROR, la edad minima no puede ser mayor a la edad maxima")
+    if hobbie not in df["hobbies"]: 
+      raise ValueError("ERROR, ese hobbie no esta en la lista de opciones")  
+    if carrera not in df["carrera"]:
+      raise ValueError("ERROR, esa carrera no es de UdeSa, anda a buscar el amor en otro lado")
+    if estilo_musical not in df["estilo musical favorito"]:   
+      raise ValueError("ERROR, el estilo musical no esta dentro de las opciones")
+    if zona_donde_vive not in df["zona por la que vive"]:      
+      raise ValueError("ERROR, zona no disponible entre las opciones que te di")
     
+
