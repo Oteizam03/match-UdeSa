@@ -44,13 +44,13 @@ def validar_preferencias(df, altura_min, altura_max, edad_max, edad_min, hobbie,
       raise ValueError ("edad no disponible dentro de los alumnos de UdeSa")
     if edad_min> edad_max: 
         raise ValueError("ERROR, la edad minima no puede ser mayor a la edad maxima")
-    if hobbie not in df["hobbies"]: 
+    if hobbie not in df["hobbies"].values: 
       raise ValueError("ERROR, ese hobbie no esta en la lista de opciones")  
-    if carrera not in df["carrera"]:
+    if carrera not in df["carrera"].values:
       raise ValueError("ERROR, esa carrera no es de UdeSa, anda a buscar el amor en otro lado")
-    if estilo_musical not in df["estilo musical favorito"]:   
+    if estilo_musical not in df["estilo musical favorito"].values:   
       raise ValueError("ERROR, el estilo musical no esta dentro de las opciones")
-    if zona_donde_vive not in df["zona por la que vive"]:      
+    if zona_donde_vive not in df["zona por la que vive"].values:      
       raise ValueError("ERROR, zona no disponible entre las opciones que te di")
     
 
