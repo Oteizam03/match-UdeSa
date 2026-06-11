@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Jun  1 13:36:05 2026
-
-@author: milagrosoteiza
-"""
-
 import pandas as pd
 """
 df = pd.read_excel("C:/Users/justo/OneDrive/Documentos/programación/match-UdeSa/datos/dataframe.xlsx", dtype = {"id" : str, "sexo": str,
@@ -25,42 +17,30 @@ df = pd.read_excel(url,dtype = {"id" : str, "sexo": str,
                                               "sexualidad": str, "instagram": str, "telefono": str})
 
 from src.filtrado import filtrar_usuarios
+from src.validar_preferencias import validar_preferencias
 
 
-def pedir_preferencias(edad_minima,edad_maxima, carrera_de_preferencia, altura_minima, altura_maxima, hobbie_de_interes, zona_de_interes, estilo_musical_de_preferencia):
-
-  if edad_minima < 17 or edad_maxima > 30:
-    raise ValueError ("edad no disponible para ser alumno de UdeSa")
-  if carrera_de_preferencia not in df["carrera"]: #ver aca si es .values
-    raise ValueError("ERROR, esa carrera no es de UdeSa, anda a buscar el amor en otro lado")
-  if altura_minima < 100 or altura_maxima > 230:
-    raise ValueError ("ERROR, altura no valida")
-  if hobbie_de_interes not in df["hobbies"]: #ver aca si es .values
-    raise ValueError("ERROR, ese hobbie no esta en la lista de opciones")
-  if zona_de_interes not in df["zona por la que vive"]:       #ver aca si es .values
-    raise ValueError("ERROR, zona no disponible entre las opciones que te di")
-  if estilo_musical_de_preferencia not in df["estilo musical favorito"]:    #ver aca si es .values
-    raise ValueError("ERROR,el estilo musical no esta dentro de las opciones")
-
-
-
-try:
-  id_usuario = input("ingrese el numero de id/legajo, son 5 numeros: ") 
-  pedir_usuario(df, id_usuario) 
-  pedir_preferencias(edad_minima,  edad_maxima, carrera_de_preferencia, altura_minima, altura_maxima,  hobbie_de_interes, zona_de_interes, estilo_musical_de_preferencia) #######
-  
-  fila = df[df["id"] == (id_usuario)] 
-  nombre = fila["nombre"].values[0]
-  apellido = fila["apellido"].values[0]
-  print("Bienvenido", nombre, apellido, "esperemos que encuentres el amor y seas feliz") 
+while True: #agrego un while para que si salta un error el usuario vuelva a cargar sus datos. Lo unico, vuelve a preguntar desde cero, si quisieramos que repregunte solo el dato en el que tuvo error habria que hacer un loop especifico para cada variable
+    try:
+      id_usuario = input("ingrese el numero de id/legajo, son 5 numeros: ") 
+      pedir_usuario(df, id_usuario) 
+      #aca en realidad habria que asignar las variables con un = y desp llamar a la funcion. pedir_preferencias(edad_minima,  edad_maxima, carrera_de_preferencia, altura_minima, altura_maxima,  hobbie_de_interes, zona_de_interes, estilo_musical_de_preferencia) #######
+      validar_preferencias(df, altura_minima, altura_maxima, edad_maxima, edad_minima, hobbie_de_interes, carrera_de_preferencia, estilo_musical_de_preferencia, zona_de_interes)
       
+      #esto podria ser una funcion
+      fila = df[df["id"] == (id_usuario)] 
+      nombre = fila["nombre"].values[0]
+      apellido = fila["apellido"].values[0]
+      print("Bienvenido", nombre, apellido, "esperemos que encuentres el amor y seas feliz") 
+          
+        
+    except ValueError as e:
+        print(e) 
+        print("Por favor vuelva a ingresar los datos otra vez")
     
-except ValueError as e:
-    print(e) 
-    
-else:
-    print("los datos fueron cargados correctamente") 
-    
+    else:
+        print("los datos fueron cargados correctamente") 
+        break
     
 #esto deberia estar en filtrar usuarios 
 fila = df[df["id"] == id_usuario].iloc[0]
