@@ -5,8 +5,10 @@ Created on Wed Jun 10 15:20:46 2026
 
 @author: milagrosoteiza
 """
+from main import df
 
 import pandas as pd
+
 
 def validar_usuario(df, id_usuario):
     """
