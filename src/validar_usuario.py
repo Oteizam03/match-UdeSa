@@ -5,7 +5,7 @@ Created on Wed Jun 10 15:20:46 2026
 
 @author: milagrosoteiza
 """
-from src.cargar_datos import df
+from src.cargar_datos import cargar_datos
 import pandas as pd
 
 def validar_usuario(df, id_usuario):
