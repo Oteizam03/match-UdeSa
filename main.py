@@ -22,7 +22,7 @@ while True: #agrego un while para que si salta un error el usuario vuelva a carg
       
       (altura_minima, altura_maxima, edad_maxima, edad_minima, hobbie_de_interes, carrera_de_preferencia, estilo_musical_de_preferencia, zona_de_interes) = pedir_preferencias()
       #aca en realidad habria que asignar las variables con un = y desp llamar a la funcion. pedir_preferencias(edad_minima,  edad_maxima, carrera_de_preferencia, altura_minima, altura_maxima,  hobbie_de_interes, zona_de_interes, estilo_musical_de_preferencia) #######
-      validar_preferencias(df, altura_minima, altura_maxima, edad_maxima, edad_minima, hobbie_de_interes, carrera_de_preferencia, estilo_musical_de_preferencia, zona_de_interes)
+      edad_minima, edad_maxima, altura_minima = validar_preferencias(df, altura_minima, altura_maxima, edad_maxima, edad_minima, hobbie_de_interes, carrera_de_preferencia, estilo_musical_de_preferencia, zona_de_interes)
       
       #esto podria ser una funcion
       fila = df[df["id"] == (id_usuario)] 
