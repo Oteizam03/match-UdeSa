@@ -1,6 +1,7 @@
 import pandas as pd
+import os 
 #si no cambian esto, el codigo corre y sube el dataset para todos (soy uma)
-url = "https://raw.githubusercontent.com/umapoggi/dataset/main/usuarios_50_udesa.xlsx"
+url = r"datos/dataframe.xlsx" 
 
 
 

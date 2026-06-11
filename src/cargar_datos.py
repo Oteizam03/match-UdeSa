@@ -20,7 +20,7 @@ def cargar_datos(ruta):
     if not os.path.exists(ruta):
         raise FileNotFoundError(f"no se encontro el archivo en la ruta {ruta}")
         
-    df = pd.read.excel(ruta, dtype ={
+    df = pd.read_excel(ruta, dtype ={
         "id": str, "sexo": str,
         "nombre": str, "apellido": str, "carrera": str,
         "zona por la que vive": str, "hobbies": str,
