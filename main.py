@@ -1,7 +1,7 @@
 import pandas as pd
 import os 
 #si no cambian esto, el codigo corre y sube el dataset para todos (soy uma)
-url = r"datos/dataframe.xlsx"
+url = r"datos/dataframe.xlsx" 
 
 
 
