@@ -18,7 +18,8 @@ df = pd.read_excel(url,dtype = {"id" : str, "sexo": str,
 
 from src.filtrado import filtrar_usuarios
 from src.validar_preferencias import validar_preferencias
-
+from src.calculo_match import calculo_match
+from src.Graficos import grafico_match
 
 while True: #agrego un while para que si salta un error el usuario vuelva a cargar sus datos. Lo unico, vuelve a preguntar desde cero, si quisieramos que repregunte solo el dato en el que tuvo error habria que hacer un loop especifico para cada variable
     try:
@@ -47,7 +48,10 @@ fila = df[df["id"] == id_usuario].iloc[0]
 genero = fila["sexo"]
 sexualidad = fila["sexualidad"]
 print(filtrar_usuarios(df,genero, sexualidad, edad_minima, edad_maxima, altura_minima, id_usuario))  
-    
+
+matches = calculo_match()
+mensaje = grafico_match(matches)
+print(mensaje)
     
     
 #from src.calculo_match import obtener_match

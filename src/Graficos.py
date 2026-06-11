@@ -1,9 +1,5 @@
 import matplotlib.pyplot as plt
 
-#from src.calculo_match import calculo_match # ESTO VA en el main
-## matches = calculo_match()
-#mensaje = grafico_de_matches(matches)
-#print(mensaje)## ESTO VA EN EL MAIN
 
 def grafico_match(matches):
     
