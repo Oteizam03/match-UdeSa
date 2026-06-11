@@ -11,16 +11,16 @@ def validar_preferencias(df, altura_min, altura_max, edad_max, edad_min, hobbie,
         Es un dataframe con todos los datos de los alumnos de UdeSa
         
         altura_min: int
-        Numero que representa la altura minima que el match del usuario puede tener en cm. Debe ser >= 100.
+        Numero que representa la altura minima que el match del usuario puede tener en cm. Debe ser un entero y >= 100.
         
         altura_max: int 
-        Numero que representa la altura maxima que el match del usuario puede tener en cm. Debe ser <= 230.
+        Numero que representa la altura maxima que el match del usuario puede tener en cm. Debe ser un entero y <= 230.
         
         edad_max: int
-        Numero que representa la edad maxima que el match del usuario puede tener. Debe ser <= 30.
+        Numero que representa la edad maxima que el match del usuario puede tener. Debe ser un entero y <= 30.
         
         edad_min: int
-        Numero que representa la edad minima que el mach del usuario puede tener. Debe ser >= 17
+        Numero que representa la edad minima que el mach del usuario puede tener. Debe ser un entero y >= 17
         
         hobbie: str
         Hobbie que el usuario prefiere que su match realice. Debe estar en la lista de hobbies disponibles
@@ -38,6 +38,15 @@ def validar_preferencias(df, altura_min, altura_max, edad_max, edad_min, hobbie,
         ValueError: 
             Si alguno de los parametros no cumple con las validaciones correspondientes.
     '''
+    if (not edad_min.strip().isdigit()) or (not edad_max.strip().isdigit()): 
+        raise ValueError("ERROR, la edad tiene que ser un número entero no negativo")
+    edad_min= int(edad_min)
+    edad_max= int(edad_max)
+    if (not altura_min.strip().isdigit()) or (not altura_max.strip().isdigit()): 
+        raise ValueError("ERROR, la altura tiene que ser un número entero no negativo")
+    altura_min=int(altura_min)
+    altura_max = int(altura_max)
+    
     if altura_min < 100 or altura_max > 230:
       raise ValueError ("ERROR, altura no valida, debe estar entre 100cm a 230cm")
     if edad_min < 17 or edad_max > 30:
