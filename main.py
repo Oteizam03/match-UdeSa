@@ -1,12 +1,4 @@
 import pandas as pd
-"""
-df = pd.read_excel("C:/Users/justo/OneDrive/Documentos/programación/match-UdeSa/datos/dataframe.xlsx", dtype = {"id" : str, "sexo": str,
-                                              "nombre": str, "apellido": str, "carrera": str, 
-                                              "zona por la que vive": str, "hobbies": str,
-                                              "estilo musical favorito": str, "edad" : int, "altura": int,
-                                              "sexualidad": str, "instagram": str, "telefono": str}) #########
-"""
-
 #si no cambian esto, el codigo corre y sube el dataset para todos (soy uma)
 url = "https://raw.githubusercontent.com/umapoggi/dataset/main/usuarios_50_udesa.xlsx"
 
