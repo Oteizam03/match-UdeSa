@@ -10,26 +10,37 @@ import pandas as pd
 
 def validar_usuario(df, id_usuario):
     """
+    Valida que el ID ingresado corresponda a un alumno registrado en la base de datos.
 
-    Esta funcion se encarga de validar el usuario de udesa ingresado por el usuario de Match UdeSA
-    
-    
-    df : DataFrame
-        contiene las caracteristicas de los alumnos de grado se la universidad de San Andres. Tiene 13 columnas y el dataframe creado tiene 1500 filas. Pero se pueden agregar filas sin problema. 
+    La función verifica que el ID tenga exactamente 5 caracteres y que exista
+    dentro de la columna "id" del DataFrame recibido. Si alguna de estas
+    condiciones no se cumple, se lanza un ValueError. La función no muestra
+    mensajes por pantalla; el manejo del error debe hacerse desde el programa
+    principal, por ejemplo mediante un bloque try/except.
+
+    Parámetros
+    ----------
+    df : pandas.DataFrame
+        DataFrame que contiene la información de los alumnos de grado de la
+        Universidad de San Andrés. Debe incluir una columna llamada "id".
+
     id_usuario : str
-        son los 5 numeros que identifican al alumno.
+        Identificador del alumno ingresado por el usuario. Debe tener
+        exactamente 5 caracteres.
 
     Raises
     ------
     ValueError
-        si no cumple con la longitud de cinco numeros
+        Si el ID ingresado no tiene exactamente 5 caracteres.
+
     ValueError
-          si no esta el id en la base de datos de UdeSa
+        Si el ID ingresado no se encuentra en la columna "id" del DataFrame.
 
     Returns
     -------
-    None.
-
+    None
+        La función no retorna ningún valor. Solo valida el usuario o lanza un
+        error si la validación falla.
     """
     if len(id_usuario)!= 5:
         raise ValueError ("error, el numero de usuario no cumple con las caracteristicas solicitadas")
