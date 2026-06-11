@@ -73,3 +73,15 @@ def pedir_preferencias():
     estilo_musical_de_preferencia = input("ingrese el estilo musical que preferis del otro (pop/reggaeton/rock/cumbia/clasica): ")
     
     return (altura_minima, altura_maxima, edad_maxima, edad_minima, hobbie_de_interes, carrera_de_preferencia, estilo_musical_de_preferencia, zona_de_interes)
+
+
+
+
+
+
+
+
+
+
+
+
