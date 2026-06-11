@@ -10,13 +10,13 @@ import pandas as pd
 
 def validar_usuario(df, id_usuario):
     """
-    Valida que el ID ingresado corresponda a un alumno registrado en la base de datos.
+    Valida que el ID ingresado corresponda a un alumno registrado en la base de datos de UdeSA.
 
     La función verifica que el ID tenga exactamente 5 caracteres y que exista
     dentro de la columna "id" del DataFrame recibido. Si alguna de estas
     condiciones no se cumple, se lanza un ValueError. La función no muestra
     mensajes por pantalla; el manejo del error debe hacerse desde el programa
-    principal, por ejemplo mediante un bloque try/except.
+    principal (main), por ejemplo mediante un bloque try/except.
 
     Parámetros
     ----------
