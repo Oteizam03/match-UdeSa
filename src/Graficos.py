@@ -6,8 +6,19 @@ def grafico_match(matches):
     '''
     Esta funcion tiene el objetivo de tomar los datos del calculo de match, donde\
     se obtienen los usuarios con los que se matchea y el porcentaje de match con cada\
-    uno. De esta manera, se obtiene un grafico en orden donde se puede ver primero \
-    el usuario que mas coincidencia tiene en relacion a las preferencias del usuario.
+    uno. De esta manera, se ordenan de mayor a menor los porcentajes de cada usuario \
+    y se construye un grafico de barras horizontales siendo el primer usuario el de \
+    mayor coincidencia. Por otro lado con los datos obtenidos del calculo de match\
+    se crea un mensaje donde se indican los usuarios y el resto de los datos. 
+    
+    Parametros:
+    matches: src, lista.
+    Va a recibir una lista de datos de los usuarios donde se toman los legajos y porcentajes
+    
+    Return:
+    mensaje: src.
+    Va a establecer secciones de cada usuario con los datos de cada uno. 
+    Ademas se muestra el grafico al finalizar la funcion gracias al metodo .show()
 
     '''
     
