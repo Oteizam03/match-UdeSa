@@ -61,5 +61,6 @@ def validar_preferencias(df, altura_min, altura_max, edad_max, edad_min, hobbie,
       raise ValueError("ERROR, el estilo musical no esta dentro de las opciones")
     if zona_donde_vive not in df["zona por la que vive"].values:      
       raise ValueError("ERROR, zona no disponible entre las opciones que te di")
-    
+      
+    return edad_min, edad_max, altura_min, altura_max
 
