@@ -8,7 +8,6 @@ Created on Wed Jun 10 15:20:46 2026
 from src.cargar_datos import df
 import pandas as pd
 
-
 def validar_usuario(df, id_usuario):
     """
 
@@ -34,7 +33,7 @@ def validar_usuario(df, id_usuario):
     """
     if len(id_usuario)!= 5:
         raise ValueError ("error, el numero de usuario no cumple con las caracteristicas solicitadas")
-    if id_usuario not in df["id"]: #ver aca si es .values
+    if id_usuario not in df["id"].values:
         raise ValueError("Error, tu id no esta en nuestra base de datos, no sos alumno de UdeSa")
         
     

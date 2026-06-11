@@ -14,13 +14,13 @@ def pedir_preferencias():
      
     Returns
     -------
-    altura_minima : int
+    altura_minima : str
         es la altura minima con la que el usuario saldria
-    altura_maxima : int
+    altura_maxima : str
         es la altura maxima con la que el usuario estaria
-    edad_maxima : int
+    edad_maxima : str
         es la edad maxima con la que el usuario esta duspuesto a salir
-    edad_minima : int
+    edad_minima : str
         es la edad minima con la que el usuario esta duspuesto a salir
     hobbie_de_interes : str
         es el hobbie que el usuario busca que haga el otro
@@ -33,11 +33,11 @@ def pedir_preferencias():
 
     """
     
-    edad_minima = int(input("ingrese la edad minima con la que estas dispuesto a salir: ")) #en funcion 2
-    edad_maxima = int(input("ingrese la edad maxima con la que estas dispuesto a salir: "))
+    edad_minima = input("ingrese la edad minima con la que estas dispuesto a salir: ")
+    edad_maxima = input("ingrese la edad maxima con la que estas dispuesto a salir: ")
     carrera_de_preferencia = input("ingrese la carrera que te gustaria que estudie el otro: ")
-    altura_minima = int(input("ingrese la altura minima con el que estes dispuesto a salir: "))
-    altura_maxima = int(input("ingrese la altura maxima con el que estes dispuesto a salir: "))
+    altura_minima = input("ingrese la altura minima con el que estes dispuesto a salir: ")
+    altura_maxima = input("ingrese la altura maxima con el que estes dispuesto a salir: ")
     hobbie_de_interes = input("ingrese UN hobbie que prefieras que haga el otro(lectura, gaming, musica, arte, deporte): ")
     zona_de_interes = input("ingrese la zona en la que preferis que viva el otro (norte/centro/sur): ")
     estilo_musical_de_preferencia = input("ingrese el estilo musical que preferis del otro (pop/reggaeton/rock/cumbia/clasica): ")
