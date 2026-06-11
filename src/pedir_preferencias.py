@@ -34,8 +34,13 @@ def pedir_preferencias():
     """
     
     edad_minima = input("ingrese la edad minima con la que estas dispuesto a salir: ")
-    edad_maxima = input("ingrese la edad maxima con la que estas dispuesto a salir: ")
-    carrera_de_preferencia = input("ingrese la carrera que te gustaria que estudie el otro: ")
+    edad_maxima = input("ingrese la edad maxima con la que estas dispuesto a salir: ")    
+    carrera_de_preferencia = input("ingrese la carrera que te gustaria que estudie el otro "
+    "(abogacia, administracion de empresas, ciencia politica y gobierno, ciencias de la educacion, "
+    "ciencias del comportamiento, comunicacion, contador publico, diseno, economia, economia empresarial, "
+    "finanzas, humanidades, ingenieria en biotecnologia, ingenieria en inteligencia artificial, "
+    "ingenieria en sustentabilidad, negocios digitales, profesorado en educacion primaria, "
+    "relaciones internacionales): ")
     altura_minima = input("ingrese la altura minima con el que estes dispuesto a salir en cm (ej: 155): ")
     altura_maxima = input("ingrese la altura maxima con el que estes dispuesto a salir en cm (ej: 175): ")
     hobbie_de_interes = input("ingrese UN hobbie que prefieras que haga el otro(lectura, gaming, musica, arte, deporte): ")
