@@ -17,7 +17,7 @@ df = cargar_datos(url)
 
 while True: #agrego un while para que si salta un error el usuario vuelva a cargar sus datos. Lo unico, vuelve a preguntar desde cero, si quisieramos que repregunte solo el dato en el que tuvo error habria que hacer un loop especifico para cada variable
     try:
-      id_usuario = input("ingrese el numero de id/legajo, son 5 numeros: ") 
+      id_usuario = input("ingrese el numero de id/legajo, son 5 numeros: ").stip()
       validar_usuario(df, id_usuario) 
       
       altura_minima, altura_maxima, edad_maxima, edad_minima, hobbie_de_interes, carrera_de_preferencia, estilo_musical_de_preferencia, zona_de_interes = pedir_preferencias()
