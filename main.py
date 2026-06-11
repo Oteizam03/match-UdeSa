@@ -1,20 +1,19 @@
 import pandas as pd
+import os 
 #si no cambian esto, el codigo corre y sube el dataset para todos (soy uma)
-url = "https://raw.githubusercontent.com/umapoggi/dataset/main/usuarios_50_udesa.xlsx"
+url = r"datos/dataframe.xlsx" 
 
-df = pd.read_excel(url,dtype = {"id" : str, "sexo": str,
-                                              "nombre": str, "apellido": str, "carrera": str, 
-                                              "zona por la que vive": str, "hobbies": str,
-                                              "estilo musical favorito": str, "edad" : int, "altura": int,
-                                              "sexualidad": str, "instagram": str, "telefono": str})
+
 
 from src.filtrado import filtrar_usuarios
 from src.validar_preferencias import validar_preferencias
 from src.calculo_match import calculo_match
 from src.Graficos import grafico_match
 from src.pedir_preferencias import pedir_preferencias
-from src.pedir_usuario import validar_usuario
+from src.validar_usuario import validar_usuario
+from src.cargar_datos import cargar_datos
 
+df = cargar_datos(url)
 
 while True: #agrego un while para que si salta un error el usuario vuelva a cargar sus datos. Lo unico, vuelve a preguntar desde cero, si quisieramos que repregunte solo el dato en el que tuvo error habria que hacer un loop especifico para cada variable
     try:
@@ -40,13 +39,14 @@ while True: #agrego un while para que si salta un error el usuario vuelva a carg
         print("los datos fueron cargados correctamente") 
         break
     
-#esto deberia estar en filtrar usuarios 
+#con esto consigo los parametros para correr la funcion
 fila = df[df["id"] == id_usuario].iloc[0]
 genero = fila["sexo"]
 sexualidad = fila["sexualidad"]
-print(filtrar_usuarios(df,genero, sexualidad, edad_minima, edad_maxima, altura_minima, id_usuario))  
 
-matches = calculo_match()
+candidatos = filtrar_usuarios(df, genero, sexualidad, edad_minima, edad_maxima, altura_minima, id_usuario)
+
+matches = calculo_match(candidatos)
 mensaje = grafico_match(matches)
 print(mensaje)
     
