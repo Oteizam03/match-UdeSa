@@ -5,8 +5,15 @@ Created on Wed Jun 10 15:45:40 2026
 
 @author: milagrosoteiza
 """
+from src.validar_preferencias import pedir_con_validacion
+from src.validar_preferencias import validar_altura
+from src.validar_preferencias import validar_rango
+from src.validar_preferencias import 
+
+"""
 def pedir_preferencias():
 
+    """
     """
     Solicita al usuario sus preferencias para buscar posibles matches.
 
@@ -55,7 +62,7 @@ def pedir_preferencias():
             persona.
 
         zona_de_interes : str
-            Zona en la que el usuario prefiere que viva la otra persona.
+            Zona en la que el usuario prefiere que viva la otra persona. """
     """
     
     edad_minima = input("ingrese la edad minima con la que estas dispuesto a salir: ")
@@ -73,7 +80,37 @@ def pedir_preferencias():
     estilo_musical_de_preferencia = input("ingrese el estilo musical que preferis del otro (pop/reggaeton/rock/cumbia/clasica): ")
     
     return (altura_minima, altura_maxima, edad_maxima, edad_minima, hobbie_de_interes, carrera_de_preferencia, estilo_musical_de_preferencia, zona_de_interes)
+"""
+def pedir_preferencias(df): 
+    altura_min = pedir_con_validacion("Ingrese la altura minima que prefiere: ", validar_altura)
+    while True: 
+        altura_max = pedir_con_validacion("Ingrese la altura maxima que prefiere: ", validar_altura)
+        try: 
+            validar_rango(altura_min, altura_max, "altura")
+            break
+        except ValueError as e: 
+            print (e)
+    
+    edad_min =  pedir_con_validacion("Ingrese la edad minima que prefiere: ", validar_edad)
+    while True:
+        edad_max = pedir_con_validacion("Ingrese la edad max que prefiere: ", validar_edad)
+        try: 
+            validar_rango(edad_min, edad_max, "edad")
+            break
+        except ValueError as e:
+            print (e)
+    hobbie = pedir_con_validacion2(df, "ingrese el hobbie", validar_opcion, "hobbies", "hobbie")
+    musica = pedir_con_validacion2(df, "ingrese el estilo de musica", validar_opcion, "estilo musical favorito", "estilo de musica") 
+    zona_donde_vive = pedir_con_validacion2(df, "ingrese la zona de preferencia", validar_opcion, "zona por la que vive", "zona")
+    while True: 
+        carrera = input("ingrese la carrera")
+        try: 
+            validar_carrera(df, carrera)
+            break
+        except ValueError as e: 
+            print(e)
 
+    return (edad_min, edad_max, altura_min, altura_max, hobbie, musica, zona_donde_vive, carrera)
 
 
 
