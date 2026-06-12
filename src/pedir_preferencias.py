@@ -79,28 +79,33 @@ def pedir_preferencias():
    return (altura_minima, altura_maxima, edad_maxima, edad_minima, hobbie_de_interes, carrera_de_preferencia, estilo_musical_de_preferencia, zona_de_interes)
 
 def pedir_preferencias(df): 
-    altura_min = pedir_con_validacion("Ingrese la altura minima que prefiere: ", validar_altura)
+    altura_min = pedir_con_validacion("ingrese la altura minima con el que estes dispuesto a salir en cm (ej: 155): ", validar_altura)
     while True: 
-        altura_max = pedir_con_validacion("Ingrese la altura maxima que prefiere: ", validar_altura)
+        altura_max = pedir_con_validacion("ingrese la altura maxima con el que estes dispuesto a salir en cm (ej: 175): ", validar_altura)
         try: 
             validar_rango(altura_min, altura_max, "altura")
             break
         except ValueError as e: 
             print (e)
     
-    edad_min =  pedir_con_validacion("Ingrese la edad minima que prefiere: ", validar_edad)
+    edad_min =  pedir_con_validacion("ingrese la edad minima con la que estas dispuesto a salir: ", validar_edad)
     while True:
-        edad_max = pedir_con_validacion("Ingrese la edad max que prefiere: ", validar_edad)
+        edad_max = pedir_con_validacion("ingrese la edad maxima con la que estas dispuesto a salir: ", validar_edad)
         try: 
             validar_rango(edad_min, edad_max, "edad")
             break
         except ValueError as e:
             print (e)
-    hobbie = pedir_con_validacion2(df, "ingrese el hobbie", validar_opcion, "hobbies", "hobbie")
-    musica = pedir_con_validacion2(df, "ingrese el estilo de musica", validar_opcion, "estilo musical favorito", "estilo de musica") 
-    zona_donde_vive = pedir_con_validacion2(df, "ingrese la zona de preferencia", validar_opcion, "zona por la que vive", "zona")
+    hobbie = pedir_con_validacion2(df, "ingrese UN hobbie que prefieras que haga el otro(lectura, gaming, musica, arte, deporte): ", validar_opcion, "hobbies", "hobbie")
+    musica = pedir_con_validacion2(df, "ingrese el estilo musical que preferis del otro (pop/reggaeton/rock/cumbia/clasica): ", validar_opcion, "estilo musical favorito", "estilo de musica") 
+    zona_donde_vive = pedir_con_validacion2(df, "ingrese la zona en la que preferis que viva el otro (norte/centro/sur): ", validar_opcion, "zona por la que vive", "zona")
     while True: 
-        carrera = input("ingrese la carrera")
+        carrera = input("ingrese la carrera que te gustaria que estudie el otro "
+        "(abogacia, administracion de empresas, ciencia politica y gobierno, ciencias de la educacion, "
+        "ciencias del comportamiento, comunicacion, contador publico, diseno, economia, economia empresarial, "
+        "finanzas, humanidades, ingenieria en biotecnologia, ingenieria en inteligencia artificial, "
+        "ingenieria en sustentabilidad, negocios digitales, profesorado en educacion primaria, "
+        "relaciones internacionales): ")
         try: 
             validar_carrera(df, carrera)
             break
