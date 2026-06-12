@@ -7,7 +7,7 @@ url = r"datos/dataframe.xlsx"
 
 from src.filtrado import filtrar_usuarios
 from src.validar_preferencias import validar_preferencias
-from src.calculo_match import calculo_match
+from src.calculo_match import obtener_match
 from src.Graficos import grafico_match
 from src.pedir_preferencias import pedir_preferencias
 from src.validar_usuario import validar_usuario
@@ -19,7 +19,7 @@ df = cargar_datos(url)
 
 while True: #agrego un while para que si salta un error el usuario vuelva a cargar sus datos. Lo unico, vuelve a preguntar desde cero, si quisieramos que repregunte solo el dato en el que tuvo error habria que hacer un loop especifico para cada variable
     try:
-      id_usuario = input("ingrese el numero de id/legajo, son 5 numeros: ").stip()
+      id_usuario = input("ingrese el numero de id/legajo, son 5 numeros: ").strip()
       validar_usuario(df, id_usuario) 
       
       altura_minima, altura_maxima, edad_maxima, edad_minima, hobbie_de_interes, carrera_de_preferencia, estilo_musical_de_preferencia, zona_de_interes = pedir_preferencias()
@@ -59,7 +59,7 @@ preferencias = {
 
 candidatos = filtrar_usuarios(df, genero, sexualidad, edad_minima, edad_maxima, altura_minima, id_usuario)
 
-matches = calculo_match(id_usuario, candidatos, preferencias)
+matches = obtener_match(df,id_usuario,candidatos, preferencias)
 mensaje = grafico_match(matches)
 print(mensaje)
     
