@@ -5,16 +5,13 @@ Created on Wed Jun 10 15:45:40 2026
 
 @author: milagrosoteiza
 """
-from src.validar_preferencias import pedir_con_validacion
-from src.validar_preferencias import validar_altura
-from src.validar_preferencias import validar_rango
-from src.validar_preferencias import 
+from src.validar_preferencias import pedir_con_validacion, validar_altura, validar_rango, validar_edad, pedir_con_validacion2, validar_opcion, validar_carrera
+from src.cargar_datos import cargar_datos
 
-"""
+
 def pedir_preferencias():
 
-    """
-    """
+   """ 
     Solicita al usuario sus preferencias para buscar posibles matches.
 
     La función pide por consola distintos criterios de preferencia del usuario,
@@ -62,25 +59,25 @@ def pedir_preferencias():
             persona.
 
         zona_de_interes : str
-            Zona en la que el usuario prefiere que viva la otra persona. """
+            Zona en la que el usuario prefiere que viva la otra persona. 
     """
     
-    edad_minima = input("ingrese la edad minima con la que estas dispuesto a salir: ")
-    edad_maxima = input("ingrese la edad maxima con la que estas dispuesto a salir: ")    
-    carrera_de_preferencia = input("ingrese la carrera que te gustaria que estudie el otro "
-    "(abogacia, administracion de empresas, ciencia politica y gobierno, ciencias de la educacion, "
-    "ciencias del comportamiento, comunicacion, contador publico, diseno, economia, economia empresarial, "
-    "finanzas, humanidades, ingenieria en biotecnologia, ingenieria en inteligencia artificial, "
-    "ingenieria en sustentabilidad, negocios digitales, profesorado en educacion primaria, "
-    "relaciones internacionales): ")
-    altura_minima = input("ingrese la altura minima con el que estes dispuesto a salir en cm (ej: 155): ")
-    altura_maxima = input("ingrese la altura maxima con el que estes dispuesto a salir en cm (ej: 175): ")
-    hobbie_de_interes = input("ingrese UN hobbie que prefieras que haga el otro(lectura, gaming, musica, arte, deporte): ")
-    zona_de_interes = input("ingrese la zona en la que preferis que viva el otro (norte/centro/sur): ")
-    estilo_musical_de_preferencia = input("ingrese el estilo musical que preferis del otro (pop/reggaeton/rock/cumbia/clasica): ")
+   edad_minima = input("ingrese la edad minima con la que estas dispuesto a salir: ")
+   edad_maxima = input("ingrese la edad maxima con la que estas dispuesto a salir: ")    
+   carrera_de_preferencia = input("ingrese la carrera que te gustaria que estudie el otro "
+   "(abogacia, administracion de empresas, ciencia politica y gobierno, ciencias de la educacion, "
+   "ciencias del comportamiento, comunicacion, contador publico, diseno, economia, economia empresarial, "
+   "finanzas, humanidades, ingenieria en biotecnologia, ingenieria en inteligencia artificial, "
+   "ingenieria en sustentabilidad, negocios digitales, profesorado en educacion primaria, "
+   "relaciones internacionales): ")
+   altura_minima = input("ingrese la altura minima con el que estes dispuesto a salir en cm (ej: 155): ")
+   altura_maxima = input("ingrese la altura maxima con el que estes dispuesto a salir en cm (ej: 175): ")
+   hobbie_de_interes = input("ingrese UN hobbie que prefieras que haga el otro(lectura, gaming, musica, arte, deporte): ")
+   zona_de_interes = input("ingrese la zona en la que preferis que viva el otro (norte/centro/sur): ")
+   estilo_musical_de_preferencia = input("ingrese el estilo musical que preferis del otro (pop/reggaeton/rock/cumbia/clasica): ")
     
-    return (altura_minima, altura_maxima, edad_maxima, edad_minima, hobbie_de_interes, carrera_de_preferencia, estilo_musical_de_preferencia, zona_de_interes)
-"""
+   return (altura_minima, altura_maxima, edad_maxima, edad_minima, hobbie_de_interes, carrera_de_preferencia, estilo_musical_de_preferencia, zona_de_interes)
+
 def pedir_preferencias(df): 
     altura_min = pedir_con_validacion("Ingrese la altura minima que prefiere: ", validar_altura)
     while True: 
