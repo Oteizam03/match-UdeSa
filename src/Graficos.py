@@ -19,14 +19,16 @@ def grafico_match(matches):
 
     '''
     import matplotlib.pyplot as plt
-    matches_ordenados = sorted(  # IA me ayudo a hacer que el primer match sea el de mayor coincidencia
+    print(matches[0])
+    matches_ordenados = sorted(
     matches,
-    key=lambda x: x[1],
-    reverse=True)
+    key=lambda x: x["puntaje"],
+    reverse=True
+)
     
     
     ids = [m["id"] for m in matches_ordenados]
-    porcentajes = [m["porcentaje"] for m in matches_ordenados]
+    porcentajes = [m["puntaje"] for m in matches_ordenados]
 
     plt.figure()
     plt.barh(porcentajes, ids, color = "pink")
@@ -45,7 +47,7 @@ def grafico_match(matches):
         mensaje += (
             f"ID: {m['id']}\n"
             f"Nombre: {m['nombre']} {m['apellido']}\n"
-            f"Porcentaje de match: {m['porcentaje']}%\n"
+            f"Porcentaje de match: {m['puntaje']}%\n"
             f"Instagram: {m['instagram']}\n"
             f"Teléfono: {m['telefono']}\n"
             "----------------------------------\n"
