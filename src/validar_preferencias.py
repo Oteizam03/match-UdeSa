@@ -1,66 +1,49 @@
 import pandas as pd
 
-def validar_preferencias(df, altura_min, altura_max, edad_max, edad_min, hobbie, carrera, estilo_musical, zona_donde_vive): 
-
-    '''
-    Verifica que las preferencias ingresadas por el usuario sean validas. /
-    Si no lo son levanta un error con un mensaje especificando que sucedio. 
-    
-    Parametros: 
-        df: DataFrame 
-        Es un dataframe con todos los datos de los alumnos de UdeSa
-        
-        altura_min: int
-        Numero que representa la altura minima que el match del usuario puede tener en cm. Debe ser un entero y >= 100.
-        
-        altura_max: int 
-        Numero que representa la altura maxima que el match del usuario puede tener en cm. Debe ser un entero y <= 230.
-        
-        edad_max: int
-        Numero que representa la edad maxima que el match del usuario puede tener. Debe ser un entero y <= 30.
-        
-        edad_min: int
-        Numero que representa la edad minima que el mach del usuario puede tener. Debe ser un entero y >= 17
-        
-        hobbie: str
-        Hobbie que el usuario prefiere que su match realice. Debe estar en la lista de hobbies disponibles
-        
-        carrera: str 
-        Carrera de grado que el usuario prefiere que su match estudie. Debe estar entre las opciones disponibles.
-        
-        estilo_musical: str 
-        Estilo musical que el usuario prefiere que su match escuche. Debe estar entre los estilos disponibles.
-        
-        zona_donde_vive: str 
-        Zona en donde el usuario prefiere que viva su match. Debe estar entre las opciones disponibles. 
-    
-    Raises: 
-        ValueError: 
-            Si alguno de los parametros no cumple con las validaciones correspondientes.
-    '''
-    if (not edad_min.strip().isdigit()) or (not edad_max.strip().isdigit()): 
+def validar_edad(edad): 
+    if not edad.strip().isdigit(): 
         raise ValueError("ERROR, la edad tiene que ser un número entero no negativo")
-    edad_min= int(edad_min)
-    edad_max= int(edad_max)
-    if (not altura_min.strip().isdigit()) or (not altura_max.strip().isdigit()): 
-        raise ValueError("ERROR, la altura tiene que ser un número entero no negativo")
-    altura_min=int(altura_min)
-    altura_max = int(altura_max)
-    
-    if altura_min < 100 or altura_max > 230:
-      raise ValueError ("ERROR, altura no valida, debe estar entre 100cm a 230cm")
-    if edad_min < 17 or edad_max > 30:
-      raise ValueError ("edad no disponible dentro de los alumnos de UdeSa")
-    if edad_min> edad_max: 
-        raise ValueError("ERROR, la edad minima no puede ser mayor a la edad maxima")
-    if hobbie not in df["hobbies"].values: 
-      raise ValueError("ERROR, ese hobbie no esta en la lista de opciones")  
-    if carrera not in df["carrera"].values:
-      raise ValueError("ERROR, esa carrera no es de UdeSa, anda a buscar el amor en otro lado")
-    if estilo_musical not in df["estilo musical favorito"].values:   
-      raise ValueError("ERROR, el estilo musical no esta dentro de las opciones")
-    if zona_donde_vive not in df["zona por la que vive"].values:      
-      raise ValueError("ERROR, zona no disponible entre las opciones que te di")
-      
-    return edad_min, edad_max, altura_min, altura_max
+    edad= int(edad)
+    if edad < 17 or edad> 30:
+      raise ValueError ("ERROR, edad no disponible dentro de los alumnos de UdeSa. Vuelva a ingresarla")
+    return edad  
 
+def validar_rango(rango1, rango2, preferencia): 
+    if rango1 > rango2:
+        raise ValueError (f"ERROR, la {preferencia} minima no puede ser mayor a la {preferencia} maxima")
+
+def validar_altura(altura): 
+    if not altura.strip().isdigit(): 
+        raise ValueError("ERROR, la altura tiene que ser un número entero no negativo. Vuelva a ingresarla")
+    altura=int(altura)
+    if altura < 100 or altura > 230:
+      raise ValueError ("ERROR, altura no valida, debe estar entre 100cm a 230cm. Vuelva a ingresarla")
+    return altura
+
+def validar_carrera(df, carrera): #esto en realidad podria no tenerlo y que validar carrera lo haga con de de validar_opcion
+    if carrera not in df["carrera"].values:
+      raise ValueError("ERROR, esa carrera no es de UdeSa o la escribiste mal. Escribila tal cual esta en la lista")
+    return carrera
+
+def validar_opcion(df, dato, columna, categoria): 
+    dato = dato.strip().lower()
+    if dato not in df[columna].str.lower().values: 
+      raise ValueError(f"ERROR, el/la {categoria} ingresado/a no esta en la lista de opciones. ")  
+    return dato
+
+def pedir_con_validacion(prompt, funcion_que_lo_valida): 
+    while True: 
+        dato = input(prompt)
+        try: 
+            return funcion_que_lo_valida(dato)
+            break
+        except ValueError as e: 
+            print(e)
+def pedir_con_validacion2(df, prompt, funcion_que_valida, columna, categoria): 
+    while True: 
+        dato = input(prompt)
+        try: 
+            return funcion_que_valida(df, dato, columna, categoria)
+            break
+        except ValueError as e: 
+            print(e)
