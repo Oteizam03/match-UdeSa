@@ -66,7 +66,7 @@ def pedir_preferencias(df):
     musica = pedir_con_validacion2(df, "ingrese el estilo musical que preferis del otro (pop/reggaeton/rock/cumbia/clasica): ", validar_opcion, "estilo musical favorito", "estilo de musica") 
     zona_donde_vive = pedir_con_validacion2(df, "ingrese la zona en la que preferis que viva el otro (norte/centro/sur): ", validar_opcion, "zona por la que vive", "zona")
     while True: 
-        carrera = input("ingrese la carrera que te gustaria que estudie el otro, puede COPIAR Y PEGAR de la siguiente lista "
+        carrera = input("ingrese la carrera que te gustaria que estudie el otro, puede COPIAR Y PEGAR de la siguiente lista --------------------------------------- "                              
                         
         "(abogacia, administracion de empresas, ciencia politica y gobierno, ciencias de la educacion, "
         "ciencias del comportamiento, comunicacion, contador publico, diseno, economia, economia empresarial, "
