@@ -42,6 +42,7 @@ def pedir_preferencias(df):
         
         carrera : str Carrera que el usuario prefiere que estudie la otra persona.
         """
+    print("Bienvenido a MATCH UDESA, esperemos que encuentre el amor, sea paciente. A continuacion le solicitaremos sus preferencias con respecto al otro para asi relacionarlo con posibles matches")
     
     altura_min = pedir_con_validacion("ingrese la altura minima con el que estes dispuesto a salir en cm (ej: 155): ", validar_altura)
     while True: 
@@ -60,11 +61,13 @@ def pedir_preferencias(df):
             break
         except ValueError as e:
             print (e)
+    print("Sabemos que pedimos muchos datos, SE PACIENTE, es para encntrar a tu AMOR PERFECTO")
     hobbie = pedir_con_validacion2(df, "ingrese UN hobbie que prefieras que haga el otro(lectura, gaming, musica, arte, deporte): ", validar_opcion, "hobbies", "hobbie")
     musica = pedir_con_validacion2(df, "ingrese el estilo musical que preferis del otro (pop/reggaeton/rock/cumbia/clasica): ", validar_opcion, "estilo musical favorito", "estilo de musica") 
     zona_donde_vive = pedir_con_validacion2(df, "ingrese la zona en la que preferis que viva el otro (norte/centro/sur): ", validar_opcion, "zona por la que vive", "zona")
     while True: 
-        carrera = input("ingrese la carrera que te gustaria que estudie el otro "
+        carrera = input("ingrese la carrera que te gustaria que estudie el otro, puede COPIAR Y PEGAR de la siguiente lista "
+                        
         "(abogacia, administracion de empresas, ciencia politica y gobierno, ciencias de la educacion, "
         "ciencias del comportamiento, comunicacion, contador publico, diseno, economia, economia empresarial, "
         "finanzas, humanidades, ingenieria en biotecnologia, ingenieria en inteligencia artificial, "
