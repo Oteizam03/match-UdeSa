@@ -6,15 +6,19 @@ Integrantes: Milagros Oteiza, Uma Poggi, Sol Collins, Justo Barbosa, Victoria Az
 
 1. Objetivo:
 
-El objetivo de este programa es que los alumnos de la Universidad de San Andres sean capaces de encontrar una pareja dentro de la facultad. La idea es tomar un usuario que ingresa su legajo y las preferencias que tienen en su pareja; con los datos almacenados en un dataset se encontrarán las coincidencias entre los datos de los alumnos y las preferencias. Finalmente se devuelve aquellos alumnos con los que se coincide (se hizo match) y un grafico que muestre los porcentajes de coincidencias. 
+El objetivo de este programa es que los alumnos de la Universidad de San Andres sean capaces de encontrar una pareja dentro de la facultad. 
+La idea es tomar un usuario que ingresa su legajo y las preferencias que tienen en su pareja; con los datos almacenados en un dataset se encontrarán las coincidencias entre los datos de los alumnos y las preferencias. 
+Finalmente se devuelve aquellos alumnos con los que se coincide (se hizo match) y un grafico que muestre los porcentajes de coincidencias. 
 
 El programa se compone de 7 archivos con diferentes funciones, con la idea de que se integren en el main y puedan llevar a cabo el programa.
 
 Si bien todos participamos en el diseño del trabajo, para facilitar decidimos dividir tareas.
 
-El main y la validación del usuario fue elaborado por Sol.
+La validación y pediido del usuario, y el pedido con algunas validaciones de preferencias fue elaborado por Milagros.
 
-El pedido y la validación de preferencias fue elaborado por Milagros.
+El main, el la validación de preferencias fue elaborado por Sol.
+
+las funciones de Milagros y Sol estan conectadas para pedir y validar paso por paso. 
 
 La carga de datos y el filtrado fue elaborado por Justo.
 
@@ -26,13 +30,16 @@ El grafico y readme fue elaborado por Victoria.
 
 2\. Descripción de la fuente de datos:
 
-La fuente de datos es un DataFrame de 1500 registros que simula una API institucional con los legajos y diferentes datos personales de los alumnos de la universidad. Este incluye: Legajo, género, nombre, apellido, edad, zona en la que reside, hobbies, gusto de estilo musical, sexualidad, el teléfono y el Instagram.
-
+La fuente de datos es un DataFrame de 1500 registros que simula una API institucional con los legajos y diferentes datos personales de los alumnos de la universidad.
+ Este incluye: Legajo, género, nombre, apellido, edad, zona en la que reside, hobbies, gusto de estilo musical, sexualidad, el teléfono y el Instagram.
+ACLARACION: se pueden usar dataframes que tengan mas filas mientras se respeten las columnas. 
+Ningun usuario real de UdeSA va a coincidir con los legajos del dataset dados que es un dataset de fantasia.
 
 
 3\. Instrucciones de ejecución:
 
-Al iniciar el programa se preguntará el número de legajo y las preferencias del usuario en relación con su futura pareja. Luego se llevarán a cabo las funciones correspondientes de validación, carga y filtrado de datos para poder realizar el cálculo del match (porcentaje de coincidencia con los diferentes usuarios) y la ejecución de un gráfico que represente los niveles de match.
+Al iniciar el programa se preguntará el número de legajo y las preferencias del usuario en relación con su futura pareja. 
+Luego se llevarán a cabo las funciones correspondientes de validación, carga y filtrado de datos para poder realizar el cálculo del match (porcentaje de coincidencia con los diferentes usuarios) y la ejecución de un gráfico que represente los niveles de match.
 
 
 
@@ -44,7 +51,7 @@ Pandas para el desgolzado del DataFrame y Matpolotlib.pyplot para el gráfico.
 
 5\. Estructura del repositorio:
 
-Se compone de 3 carpetas, un readme y un main. Las carpetas son de datos (incluye el DataFrame), el diseño (diagramas y documentación) y el src (incluye los archivos de código).
+Se compone de 3 carpetas, un readme y un main. Las carpetas son de "datos" (incluye el DataFrame), "documentos" en donde esta el diseño (diagramas y documentación) y el src (incluye los archivos de código).
 
 
 
@@ -61,6 +68,47 @@ Los resultados finales del programa van a ser un mensaje con los datos de los us
 &#x20;
 
 8\. Declaración de uso de IA:
+
+USO NUMERO 1: Uso de Milagros 
+
+Explicacion del uso:
+La IA se uso en primera instacia para armar un Dataframe con los datos que queriamos usar.
+Lo moldeamos con nuestras preferencias y le pedimos al chat gpt que ponga datos aleatorios respetando nuestrar reglas.
+Agregamos el prompt utilizado:
+ "Generar un dataset en formato tabla (tipo pandas DataFrame o CSV) que represente usuarios de una aplicación tipo Tinder para estudiantes de UdeSa.
+El dataset debe cumplir con las siguientes condiciones:
+
+Columnas obligatorias:
+
+legajo: identificador único de 5 dígitos (string)
+nombre: nombre del estudiante
+apellido: apellido del estudiante
+edad: número entero entre 18 y 30
+altura: número entero en cm (entre 100 y 230 aproximadamente)
+genero: "M" o "F"
+sexualidad: "heterosexual", "homosexual" o "bisexual"
+carrera: debe ser una de las siguientes opciones (busca en la web todas las carreras de grado que tiene UDESA):
+(abogacia, administracion de empresas, ciencia politica y gobierno, ciencias de la educacion, ciencias del comportamiento, comunicacion, contador publico, diseno, economia, economia empresarial, finanzas, humanidades, ingenieria en biotecnologia, ingenieria en inteligencia artificial, ingenieria en sustentabilidad, negocios digitales, profesorado en educacion primaria, relaciones internacionales)
+hobbies: una de estas opciones:
+(lectura, gaming, musica, arte, deporte)
+estilo musical favorito: una de estas opciones:
+(pop, reggaeton, rock, cumbia, clasica)
+zona por la que vive: una de estas opciones:
+(norte, centro, sur)
+
+Reglas adicionales:
+
+Debe haber variedad de géneros y sexualidades
+Los legajos no deben repetirse
+Los datos deben ser realistas (no todos iguales)
+Debe haber al menos 1500 registros
+Mezclar bien las combinaciones para que haya posibles matches
+
+----------------------------------------------------------------
+USO NUMERO 2: Uso de ---
+explicacion de uso:
+prompt 
+
 
 
 ...
