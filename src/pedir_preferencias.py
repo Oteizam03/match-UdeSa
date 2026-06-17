@@ -72,7 +72,7 @@ def pedir_preferencias(df):
         "ciencias del comportamiento, comunicacion, contador publico, diseno, economia, economia empresarial, "
         "finanzas, humanidades, ingenieria en biotecnologia, ingenieria en inteligencia artificial, "
         "ingenieria en sustentabilidad, negocios digitales, profesorado en educacion primaria, "
-        "relaciones internacionales): ")
+        "relaciones internacionales): ").lower().strip()
         try: 
             validar_carrera(df, carrera)
             break
