@@ -20,24 +20,39 @@ def grafico_match(matches):
     '''
     import matplotlib.pyplot as plt
     print(matches[0])
-    matches_ordenados = sorted(
-    matches,
-    key=lambda x: x["puntaje"],
-    reverse=True
-)
-    
-    
-    ids = [m["id"] for m in matches_ordenados]
-    porcentajes = [m["puntaje"] for m in matches_ordenados]
+    cantidad_por_porcentaje = {}
 
+    for m in matches:
+        porcentaje = m["puntaje"]
+    
+        if porcentaje in cantidad_por_porcentaje:
+            cantidad_por_porcentaje[porcentaje] += 1
+        else:
+            cantidad_por_porcentaje[porcentaje] = 1
+    
+    porcentajes_ordenados = sorted(
+    cantidad_por_porcentaje.keys(),
+    reverse=True)
+    
+    porcentajes = porcentajes_ordenados
+    cantidades = []
+
+    for porcentaje in porcentajes_ordenados:
+        cantidades.append(cantidad_por_porcentaje[porcentaje])
+    
     plt.figure()
-    plt.barh(porcentajes, ids, color = "pink")
+    plt.barh(porcentajes, cantidades, color = "pink")
     plt.title("Grafico de matches")
-    plt.xlabel("Usuarios")
+    plt.xlabel("Cantidad de usuarios")
     plt.ylabel("Porcentaje match")
     plt.gca().invert_yaxis() # IA me ayudo a hacer que el primer match sea el de mayor coincidencia
     plt.show()
     
+    
+    matches_ordenados = sorted(
+    matches,
+    key=lambda x: x["puntaje"],
+    reverse=True)
     mensaje = ""
     
     mensaje = "\n¡Hiciste match con estos usuarios!\n"
