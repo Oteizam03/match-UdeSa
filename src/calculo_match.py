@@ -25,13 +25,13 @@ def calculo_match(usuario, candidatos, preferencias):
     puntaje_de_amor = 50
     puntaje_categoria = 12.5
 #chequear que hay que comparar: carrera, zona, hobbie, estilo de musica, edad, altura
-    if candidatos["carrera"] in preferencias["carrera_de_preferencia"]:
+    if candidatos["carrera"].lower() == preferencias["carrera_de_preferencia"]:
         puntaje_de_amor += puntaje_categoria
-    if candidatos["zona por la que vive"] in preferencias["zona_de_interes"]:
+    if candidatos["zona por la que vive"].lower() == preferencias["zona_de_interes"]:
         puntaje_de_amor += puntaje_categoria
-    if candidatos["hobbies"] in preferencias["hobbie_de_interes"]:
+    if candidatos["hobbies"].lower() == preferencias["hobbie_de_interes"]:
         puntaje_de_amor += puntaje_categoria
-    if candidatos["estilo musical favorito"] in preferencias["estilo_musical_de_preferencia"]:
+    if candidatos["estilo musical favorito"].lower() == preferencias["estilo_musical_de_preferencia"]:
         puntaje_de_amor += puntaje_categoria
         
     return f"{round(puntaje_de_amor)}%"
@@ -67,6 +67,8 @@ def obtener_match(df,id_usuario,candidatos, preferencias):
     
     return futuros_amores
     
+
+
     
     
     

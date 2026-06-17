@@ -14,12 +14,12 @@ while True:
       id_usuario = input("ingrese el numero de id/legajo, son 5 numeros: ").strip()
       validar_usuario(df, id_usuario) 
       
-      edad_minima, edad_maxima, altura_minima, altura_maxima, hobbie_de_interes, estilo_musical_de_preferencia, zona_de_interes, carrera_de_preferencia = pedir_preferencias(df)
       fila = df[df["id"] == (id_usuario)] 
       nombre = fila["nombre"].values[0]
       apellido = fila["apellido"].values[0]
       print("Bienvenido", nombre, apellido, "esperemos que encuentres el amor y seas feliz") 
-          
+      
+      edad_minima, edad_maxima, altura_minima, altura_maxima, hobbie_de_interes, estilo_musical_de_preferencia, zona_de_interes, carrera_de_preferencia = pedir_preferencias(df)   
         
     except ValueError as e:
         print(e) 
