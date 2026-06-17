@@ -45,7 +45,7 @@ preferencias = {
     "edad_maxima": edad_maxima
     }
 
-candidatos = filtrar_usuarios(df, genero, sexualidad, edad_minima, edad_maxima, altura_minima, id_usuario)
+candidatos = filtrar_usuarios(df, genero, sexualidad, edad_minima, edad_maxima, altura_minima, altura_maxima, id_usuario)
 
 matches = obtener_match(df,id_usuario,candidatos, preferencias)
 mensaje = grafico_match(matches)

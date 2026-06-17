@@ -62,5 +62,6 @@ Los resultados finales del programa van a ser un mensaje con los datos de los us
 
 8\. Declaración de uso de IA:
 
+
 ...
 

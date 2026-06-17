@@ -1,7 +1,7 @@
 import pandas as pd 
 
 
-def filtrar_usuarios(df,genero, sexualidad, edad_min, edad_max, altura_min, id_usuario): 
+def filtrar_usuarios(df,genero, sexualidad, edad_min, edad_max, altura_min,altura_max, id_usuario): 
     """
             Filtra el DataFrame eliminando perfiles incompatibles con el usuario.
             
@@ -22,7 +22,8 @@ def filtrar_usuarios(df,genero, sexualidad, edad_min, edad_max, altura_min, id_u
     candidatos = candidatos[
         (candidatos["edad"] >= edad_min) &
         (candidatos["edad"] <= edad_max) &
-        (candidatos["altura"] >= altura_min) 
+        (candidatos["altura"] >= altura_min)
+        (candidatos["altura"] <= altura_max)
     ]
                 
     if sexualidad == "homosexual": 
