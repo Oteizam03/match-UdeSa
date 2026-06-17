@@ -47,7 +47,7 @@ def grafico_match(matches):
         mensaje += (
             f"ID: {m['id']}\n"
             f"Nombre: {m['nombre']} {m['apellido']}\n"
-            f"Porcentaje de match: {m['puntaje']}%\n"
+            f"Porcentaje de match: {m['puntaje']}\n"
             f"Instagram: {m['instagram']}\n"
             f"Teléfono: {m['telefono']}\n"
             "----------------------------------\n"
