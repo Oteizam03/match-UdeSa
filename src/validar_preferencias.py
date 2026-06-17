@@ -156,7 +156,7 @@ def pedir_con_validacion(prompt, funcion_que_lo_valida):
         dato = input(prompt)
         try: 
             return funcion_que_lo_valida(dato)
-            break
+            
         except ValueError as e: 
             print(e)
 def pedir_con_validacion2(df, prompt, funcion_que_valida, columna, categoria): 
@@ -184,7 +184,7 @@ def pedir_con_validacion2(df, prompt, funcion_que_valida, columna, categoria):
         dato = input(prompt)
         try: 
             return funcion_que_valida(df, dato, columna, categoria)
-            break
+        
         except ValueError as e: 
             print(e)
             
