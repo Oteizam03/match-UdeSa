@@ -19,7 +19,6 @@ def grafico_match(matches):
 
     '''
     import matplotlib.pyplot as plt
-    print(matches[0])
     cantidad_por_porcentaje = {}
 
     for m in matches:
@@ -34,14 +33,12 @@ def grafico_match(matches):
     cantidad_por_porcentaje.keys(),
     reverse=True)
     
-    porcentajes = porcentajes_ordenados
     cantidades = []
-
     for porcentaje in porcentajes_ordenados:
         cantidades.append(cantidad_por_porcentaje[porcentaje])
     
     plt.figure()
-    plt.barh(porcentajes, cantidades, color = "pink")
+    plt.barh(porcentajes_ordenados, cantidades, color = "pink")
     plt.title("Grafico de matches")
     plt.xlabel("Cantidad de usuarios")
     plt.ylabel("Porcentaje match")
