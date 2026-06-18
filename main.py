@@ -28,7 +28,7 @@ while True:
               fila = df[df["id"] == (id_usuario)] 
               nombre = fila["nombre"].values[0]
               apellido = fila["apellido"].values[0]
-              print("\nBienvenido", nombre, apellido, "esperemos que encuentres el amor y seas feliz") 
+              print("\nBienvenido 💕" , nombre, apellido, "💕 esperemos que encuentres el amor y seas feliz") 
               
               edad_minima, edad_maxima, altura_minima, altura_maxima, hobbie_de_interes, estilo_musical_de_preferencia, zona_de_interes, carrera_de_preferencia = pedir_preferencias(df)   
                 
