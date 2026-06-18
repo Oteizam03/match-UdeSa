@@ -145,5 +145,10 @@ def filtrar_usuarios(df,genero, sexualidad, edad_min, edad_max, altura_min, id_u
     return candidatos
 el dataframe me parece que se puede borrar porque ya se abre directamente en el main #en ese momento del desarrollo del codigo abriamos desde el main, despues decidimos separarlo en otra funcion
 
-...
+----------------------------------------------------------------
+USO NUMERO 4: Uso de Sol Collins
+
+Explicación del uso: En el momento de validar los datos, si el usuario ingresaba una preferencia que tenia un error, ese error no aparecía hasta que el usuario no haya terminado de poner TODAS las preferencias. Lo que yo quería era que el error me aparezca justo despues de que el dato con el error haya sido ingresado. Estaba bloqueada y no se me ocurría como hacerlo, asi que le pedi ayuda a Claude. 
+
+Prompt: Tengo este programa que le pide datos al usuario por consola. El problema es que cuando el usuario ingresa algo inválido, el error no aparece en el momento, sino recién después de que terminó de cargar TODOS los datos. Cómo puedo hacer para que la validación salte apenas se ingresa un dato incorrecto, en lugar de al final de todo? (Ademas del prompt, le subi todos los archivos de código del programa y el archivo de diseño)
 
