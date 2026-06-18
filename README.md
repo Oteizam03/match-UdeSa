@@ -10,15 +10,15 @@ El objetivo de este programa es que los alumnos de la Universidad de San Andres 
 La idea es tomar un usuario que ingresa su legajo y las preferencias que tienen en su pareja; con los datos almacenados en un dataset se encontrarán las coincidencias entre los datos de los alumnos y las preferencias. 
 Finalmente se devuelve aquellos alumnos con los que se coincide (se hizo match) y un grafico que muestre los porcentajes de coincidencias. 
 
-El programa se compone de 7 archivos con diferentes funciones, con la idea de que se integren en el main y puedan llevar a cabo el programa.
+El programa se compone de 9 archivos con diferentes funciones, con la idea de que se integren en el main y puedan llevar a cabo el programa.
 
 Si bien todos participamos en el diseño del trabajo, para facilitar decidimos dividir tareas.
 
-La validación y pediido del usuario, y el pedido con algunas validaciones de preferencias fue elaborado por Milagros.
+La validación y pedido del usuario, y el pedido de preferencias fue elaborado por Milagros.
 
-El main, el la validación de preferencias fue elaborado por Sol.
+El main y la validación de preferencias fue elaborado por Sol.
 
-las funciones de Milagros y Sol estan conectadas para pedir y validar paso por paso. 
+las funciones de Milagros y Sol están conectadas para pedir y validar paso por paso. 
 
 La carga de datos y el filtrado fue elaborado por Justo.
 
@@ -33,7 +33,7 @@ El grafico y readme fue elaborado por Victoria.
 La fuente de datos es un DataFrame de 1500 registros que simula una API institucional con los legajos y diferentes datos personales de los alumnos de la universidad.
  Este incluye: Legajo, género, nombre, apellido, edad, zona en la que reside, hobbies, gusto de estilo musical, sexualidad, el teléfono y el Instagram.
 ACLARACION: se pueden usar dataframes que tengan mas filas mientras se respeten las columnas. 
-Ningun usuario real de UdeSA va a coincidir con los legajos del dataset dados que es un dataset de fantasia.
+Ningun usuario real de UdeSA va a coincidir con los legajos del dataset dado que es un dataset de fantasia.
 
 
 3\. Instrucciones de ejecución:
@@ -58,13 +58,35 @@ Se compone de 3 carpetas, un readme y un main. Las carpetas son de "datos" (incl
 
 6\. Funciones principales:
 
+cargar_datos: Carga un archivo .xlsx y lo retorna como un DataFrame de pandas
+
+mostrar_bienvenida: Muestra el cartel de bienvenida y una explicacion corta del programa.
+
+mostrar_menu: muestra el menú de opciones que tiene el usuario 
+
+validar_usuario: valida que el legajo ingresado por el usuario sea correcto (que tenga 5 números y que exista dentro del DataFrame). Si no es valido levanta un ValueError. 
+
+pedir_preferencias: Solicita y valida mediante las funciones de validar_preferencias las preferencias del usuario para buscar posibles matches.
+
+validar_preferencias: son muchas funciones dentro de este archivo. Cada una valida el dato ingresado por el usuario (edad, altura, carrera, hobbit, etc.)
+
+filtrar_usuarios: Filtra el DataFrame eliminando perfiles incompatibles con el usuario.
+
+calculo_match: compara al candidato con las preferencias del usuario y calcula el porcentaje de compatibilidad. 
+
+obtener_match: recorre los candidatos filtrados, calcula el porcentaje de compatibilidad y los agrupa en una lista. 
+
+grafico_match: grafico de barras horizontales que muestra la cantidad de usuarios con los que tuviste cierto porcentaje de match. 
+
+grafico_zonas: rafico de torta donde se puedan ver las zonas donde viven los usuarios con los que matcheaste. 
+    
 ...
 
 
 
 7\. Resultados, salidas, métricas, gráficos o funcionalidades generadas:
 
-Los resultados finales del programa van a ser un mensaje con los datos de los usuarios de coincidencias (nombre, apellido, legajo, teléfono e Instagram) para que se contacte con sus matches si es que lo desea. Luego se muestra un gráfico donde se puede ver en orden de mayor a menor los niveles de porcentajes correspondientes a cada usuario. 
+Los resultados finales del programa van a ser un mensaje con los datos de los usuarios de coincidencias (nombre, apellido, legajo, teléfono e Instagram) para que se contacte con sus matches si es que lo desea. Luego se muestra un gráfico donde se puede ver los porcentajes de match y la cantidad de usuarios con lo que tuviste ese porcentaje, y un grafico de tortas que muestra las zona donde viven los usuarios con lo que tuviste match. 
 
 &#x20;
 
