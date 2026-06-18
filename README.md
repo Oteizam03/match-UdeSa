@@ -2,7 +2,7 @@
 
 Integrantes: Milagros Oteiza, Uma Poggi, Sol Collins, Justo Barbosa, Victoria Azpeitia.
 
-
+La informacion general del trabajo se encuentra tambien en el archivo "informacion del trabajo" dentro de la carpeta documentos.
 
 1. Objetivo:
 
@@ -54,7 +54,29 @@ Pandas para el desgolzado del DataFrame y Matpolotlib.pyplot para el gráfico.
 
 Se compone de 3 carpetas, un readme y un main. Las carpetas son de "datos" (incluye el DataFrame), "documentos" en donde esta el diseño (diagramas y documentación) y el src (incluye los archivos de código).
 
-
+Match_UdeSA/
+│
+├── main.py
+├── requirements.txt
+├── README.md
+│
+├── datos/
+│   └── dataframe.xlsx
+│
+├── documentos/
+│   ├── diagramas/
+│   └── informacion_del_trabajo.md
+│
+└── src/
+    ├── bienvenida.py
+    ├── calculo_match.py
+    ├── cargar_datos.py
+    ├── filtrado.py
+    ├── Graficos.py
+    ├── mostrar_menu.py
+    ├── pedir_preferencias.py
+    ├── validar_preferencias.py
+    └── validar_usuario.py
 
 6\. Funciones principales:
 
@@ -173,4 +195,9 @@ USO NUMERO 4: Uso de Sol Collins
 Explicación del uso: En el momento de validar los datos, si el usuario ingresaba una preferencia que tenia un error, ese error no aparecía hasta que el usuario no haya terminado de poner TODAS las preferencias. Lo que yo quería era que el error me aparezca justo despues de que el dato con el error haya sido ingresado. Estaba bloqueada y no se me ocurría como hacerlo, asi que le pedi ayuda a Claude. 
 
 Prompt: Tengo este programa que le pide datos al usuario por consola. El problema es que cuando el usuario ingresa algo inválido, el error no aparece en el momento, sino recién después de que terminó de cargar TODOS los datos. Cómo puedo hacer para que la validación salte apenas se ingresa un dato incorrecto, en lugar de al final de todo? (Ademas del prompt, le subi todos los archivos de código del programa y el archivo de diseño)
+
+----------------------------------------------------------------
+uso en general cuando la consola nos tiraba un error para que nos ayude a comprender que significaba dicho error para luego poder pensar una solucion. 
+el prompt consistia en mandarle una foto de la consola y una pregunta como: nos salto este error, me explicas en lenguaje basico que significa el error para que se me ocurra una solucion. 
+
 

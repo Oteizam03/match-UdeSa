@@ -15,7 +15,7 @@ mostrar_bienvenida()
 opcion = ""
 while True: 
     if opcion == "3":
-        print("\nListo, nos vemos! Suerte en el amor.")
+        print("\nListo, nos vemos! Suerte en el amor 💕")
         break 
     opcion = mostrar_menu()
     
@@ -66,9 +66,9 @@ while True:
             print(mensaje)
         except ValueError as e:
             print("Error:", e)
-        #break      
+            
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-        #continuar= input("Te gustaria continuar o deseas terminar? ")
+        
         while True:
             continuar= input("\nTe gustaria continuar o deseas terminar? ")
             if continuar.strip().lower() == "continuar":
