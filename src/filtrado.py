@@ -22,7 +22,7 @@ def filtrar_usuarios(df,genero, sexualidad, edad_min, edad_max, altura_min,altur
     candidatos = candidatos[
         (candidatos["edad"] >= edad_min) &
         (candidatos["edad"] <= edad_max) &
-        (candidatos["altura"] >= altura_min)
+        (candidatos["altura"] >= altura_min) &
         (candidatos["altura"] <= altura_max)
     ]
                 

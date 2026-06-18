@@ -11,8 +11,8 @@ def mostrar_menu():
     Esta funcion se encanra de mostrae un menu.
     """
     print("MENÚ")
-    print(" 1. Buscar mi match")
-    print(" 2. Como funciona el programa")
+    print(" 1. Como funciona el programa")
+    print(" 2. Buscar mi match")
     print(" 3. Salir")
     print("----------------------------")
     return input("Elegi una opcion (1/2/3): ").strip()
