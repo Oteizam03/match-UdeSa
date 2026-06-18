@@ -8,6 +8,7 @@ from src.Graficos import grafico_match
 from src.pedir_preferencias import pedir_preferencias
 from src.validar_usuario import validar_usuario
 from src.cargar_datos import cargar_datos
+from src.Graficos import grafico_zonas
 
 df = cargar_datos(url)
 mostrar_bienvenida()
@@ -56,9 +57,15 @@ while True:
         
         candidatos = filtrar_usuarios(df, genero, sexualidad, edad_minima, edad_maxima, altura_minima, altura_maxima, id_usuario)
         
-        matches = obtener_match(df,id_usuario,candidatos, preferencias)
-        mensaje = grafico_match(matches)
-        print(mensaje)
+        try: 
+            matches = obtener_match(df,id_usuario,candidatos, preferencias)
+            if len(matches) == 0:
+                print("La lista no puede estar vacía")
+            mensaje = grafico_match(matches)
+            grafico_zonas(matches)
+            print(mensaje)
+        except ValueError as e:
+            print("Error:", e)
         #break      
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
         #continuar= input("Te gustaria continuar o deseas terminar? ")

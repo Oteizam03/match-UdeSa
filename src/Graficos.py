@@ -78,24 +78,20 @@ def grafico_zonas(matches):
     return: grafico
     Este grafico muestra en su area total las zonas en las que viven los mateches.
     '''
-    import matplotlib.pypolt as plt
-    zonas = matches["zona por la que vive"]
+    import matplotlib.pyplot as plt
     zonas_match = {}
-    cantidad_por_zona = 0
+    zonas = []
+    for m in matches:
+        zonas.append(m["zona por la que vive"])
     
     for zona in zonas:
         if zona in zonas_match:
-            cantidad_por_zona[zona] += 1
+            zonas_match[zona] += 1
         else:
-            cantidad_por_zona[zona] = 1
+            zonas_match[zona] = 1
     
-    porcentaje_por_zona = cantidad_por_zona/len(zonas)
-        
-    plt.figure()
-    plt.pie(porcentaje_por_zona, labels = zonas_match.keys(), color= "red" "green" "blue" , autopct = "%1.1f%")
+    plt.figure(figsize=(6,6))    
+    plt.axis("equal")
+    plt.pie(zonas_match.values(), labels = zonas_match.keys(), autopct = "%1.1f%%")
     plt.title("Zonas de coincidencia en tus matches")
     plt.show()
-    
-    
-    
-    
