@@ -19,7 +19,6 @@ def grafico_match(matches):
 
     '''
     import matplotlib.pyplot as plt
-    print(matches[0])
     cantidad_por_porcentaje = {}
 
     for m in matches:
