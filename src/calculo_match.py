@@ -62,7 +62,8 @@ def obtener_match(df,id_usuario,candidatos, preferencias):
             "nombre": candidato["nombre"],
             "apellido": candidato["apellido"],
             "instagram": candidato["instagram"],
-            "telefono": candidato["telefono"]
+            "telefono": candidato["telefono"],
+            "zona por la que vive": candidato["zona por la que vive"]
         })
     
     return futuros_amores

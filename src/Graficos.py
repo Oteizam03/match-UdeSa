@@ -67,3 +67,35 @@ def grafico_match(matches):
 
     return mensaje
 
+def grafico_zonas(matches):
+    '''
+    Esta funcion busca hacer un grafico de torta donde se puedan ver las \
+    zonas donde viven los usuarios con los que matcheaste. 
+    
+    Parametro: lista. 
+    Va a recibir una lista de datos de los usuarios donde se toman los legajos y porcentajes.
+    
+    return: grafico
+    Este grafico muestra en su area total las zonas en las que viven los mateches.
+    '''
+    import matplotlib.pypolt as plt
+    zonas = matches["zona por la que vive"]
+    zonas_match = {}
+    cantidad_por_zona = 0
+    
+    for zona in zonas:
+        if zona in zonas_match:
+            cantidad_por_zona[zona] += 1
+        else:
+            cantidad_por_zona[zona] = 1
+    
+    porcentaje_por_zona = cantidad_por_zona/len(zonas)
+        
+    plt.figure()
+    plt.pie(porcentaje_por_zona, labels = zonas_match.keys(), color= "red" "green" "blue" , autopct = "%1.1f%")
+    plt.title("Zonas de coincidencia en tus matches")
+    plt.show()
+    
+    
+    
+    
