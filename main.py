@@ -46,11 +46,15 @@ preferencias = {
     }
 
 candidatos = filtrar_usuarios(df, genero, sexualidad, edad_minima, edad_maxima, altura_minima, altura_maxima, id_usuario)
-
-matches = obtener_match(df,id_usuario,candidatos, preferencias)
-mensaje = grafico_match(matches)
-print(mensaje)
-    
+try: 
+    matches = obtener_match(df,id_usuario,candidatos, preferencias)
+    if len(matches) == 0:
+        print("La lista no puede estar vacía")
+    mensaje = grafico_match(matches)
+    print(mensaje)
+except ValueError as e:
+    print("Error:", e)
+   
     
 #from src.calculo_match import obtener_match
 #le pasamos la imformacion filtrada para hacer el calculo del match
