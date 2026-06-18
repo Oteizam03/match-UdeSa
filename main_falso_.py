@@ -34,29 +34,29 @@ while True:
             else:
                 print("los datos fueron cargados correctamente") 
                 #break
-            
-            #con esto consigo los parametros para correr la funcion
-            fila = df[df["id"] == id_usuario].iloc[0]
-            genero = fila["sexo"]
-            sexualidad = fila["sexualidad"]
-            
-            preferencias = {
-                "carrera_de_preferencia": carrera_de_preferencia,
-                "zona_de_interes": zona_de_interes,
-                "estilo_musical_de_preferencia": estilo_musical_de_preferencia,
-                "hobbie_de_interes": hobbie_de_interes,
-                "altura_minima": altura_minima,
-                "altura_maxima": altura_maxima,
-                "edad_minima": edad_minima,
-                "edad_maxima": edad_maxima
-                }
-            
-            candidatos = filtrar_usuarios(df, genero, sexualidad, edad_minima, edad_maxima, altura_minima, altura_maxima, id_usuario)
-            
-            matches = obtener_match(df,id_usuario,candidatos, preferencias)
-            mensaje = grafico_match(matches)
-            print(mensaje)
-            break
+        #con esto consigo los parametros para correr la funcion
+        fila = df[df["id"] == id_usuario].iloc[0]
+        genero = fila["sexo"]
+        sexualidad = fila["sexualidad"]
+        
+        preferencias = {
+            "carrera_de_preferencia": carrera_de_preferencia,
+            "zona_de_interes": zona_de_interes,
+            "estilo_musical_de_preferencia": estilo_musical_de_preferencia,
+            "hobbie_de_interes": hobbie_de_interes,
+            "altura_minima": altura_minima,
+            "altura_maxima": altura_maxima,
+            "edad_minima": edad_minima,
+            "edad_maxima": edad_maxima
+            }
+        
+        candidatos = filtrar_usuarios(df, genero, sexualidad, edad_minima, edad_maxima, altura_minima, altura_maxima, id_usuario)
+        
+        matches = obtener_match(df,id_usuario,candidatos, preferencias)
+        mensaje = grafico_match(matches)
+        print(mensaje)
+        break      
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
         continuar= input("Te gustaria continuar o deseas terminar? ")
         if continuar.strip().lower() == "continuar":
             continue 
