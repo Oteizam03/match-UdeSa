@@ -105,9 +105,11 @@ Debe haber al menos 1500 registros
 Mezclar bien las combinaciones para que haya posibles matches
 
 ----------------------------------------------------------------
-USO NUMERO 2: Uso de ---
-explicacion de uso:
-prompt 
+USO NUMERO 2: Uso de Uma Poggi Soqueff
+explicacion de uso: No entendia porque el pregrama me tiraba un error en la funcion de calculo_match():
+prompt : no estaria entendiendo el error que me tira en la linea del : if candidatos["carrera"] == preferencias["carrera_de_preferencia"]:
+Chat me dijo que no podia comparar un dataframe con una lista, entonces me explico que si yo ponia el .lower() despues de: if candidatos["carrera"], osea en el programa queda if candidatos["carrera"].lower()== preferencias["carrera_de_preferencia"]:
+si iba a poder ver comparar que la carrerara que haga el candidato esta dentro de mis preferencias.
 
 
 
