@@ -9,6 +9,14 @@ Created on Thu Jun 18 15:12:14 2026
 def mostrar_menu():
     """
     Esta funcion se encanra de mostrae un menu.
+    
+    parametros
+    --------
+    None
+    
+    returns
+    ------
+    input pregutnando opcion al usuario 
     """
     print("MENÚ")
     print(" 1. Como funciona el programa")

@@ -1,0 +1,4 @@
+Trabajo Match Odesa
+
+Para el siguiente trabajo se necesitaran las siguientes librerías:  matplotlib para los gráficos 
+pandas para la lectura del DataFrame 
