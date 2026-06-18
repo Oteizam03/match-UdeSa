@@ -14,30 +14,30 @@ mostrar_bienvenida()
 opcion = ""
 while True: 
     if opcion == "3":
-        print("Listo, nos vemos! Suerte en el amor.")
+        print("\nListo, nos vemos! Suerte en el amor.")
         break 
     opcion = mostrar_menu()
     
     if opcion == "2": 
         while True: 
             try:
-              id_usuario = input("ingrese el numero de id/legajo, son 5 numeros: ").strip()
+              id_usuario = input("\nIngrese el numero de id/legajo, son 5 numeros: ").strip()
               validar_usuario(df, id_usuario) 
               
               fila = df[df["id"] == (id_usuario)] 
               nombre = fila["nombre"].values[0]
               apellido = fila["apellido"].values[0]
-              print("Bienvenido", nombre, apellido, "esperemos que encuentres el amor y seas feliz") 
+              print("\nBienvenido", nombre, apellido, "esperemos que encuentres el amor y seas feliz") 
               
               edad_minima, edad_maxima, altura_minima, altura_maxima, hobbie_de_interes, estilo_musical_de_preferencia, zona_de_interes, carrera_de_preferencia = pedir_preferencias(df)   
                 
             except ValueError as e:
                 print(e) 
-                print("Por favor vuelva a ingresar los datos otra vez")
+                print("\nPor favor vuelva a ingresar los datos otra vez")
             
             else:
-                print("los datos fueron cargados correctamente") 
-            break
+                print("\nLos datos fueron cargados correctamente") 
+                break
         #con esto consigo los parametros para correr la funcion
         fila = df[df["id"] == id_usuario].iloc[0]
         genero = fila["sexo"]
@@ -63,14 +63,14 @@ while True:
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
         #continuar= input("Te gustaria continuar o deseas terminar? ")
         while True:
-            continuar= input("Te gustaria continuar o deseas terminar? ")
+            continuar= input("\nTe gustaria continuar o deseas terminar? ")
             if continuar.strip().lower() == "continuar":
                 break
             elif continuar.strip().lower() == "terminar": 
                 opcion = "3"
                 break
             else:
-                print("ERROR, respuesta incorrecta. No era una opcion")
+                print("\nERROR, respuesta incorrecta. No era una opcion")
                 
                 
             
@@ -81,8 +81,8 @@ while True:
         mostrar_bienvenida()
     
     elif opcion == "3":
-        print("Listo, nos vemos! Suerte en el amor 💘")
+        print("\nListo, nos vemos! Suerte en el amor 💘")
         break 
     else: 
-        print("ERROR, opcion invalida. Ingrese 1, 2 0 3")  
+        print("\nERROR, opcion invalida. Ingrese 1, 2 0 3")  
         
