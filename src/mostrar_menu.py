@@ -18,7 +18,7 @@ def mostrar_menu():
     ------
     input pregutnando opcion al usuario 
     """
-    print("MENÚ")
+    print("\n--- MENÚ ---")
     print(" 1. Como funciona el programa")
     print(" 2. Buscar mi match")
     print(" 3. Salir")
