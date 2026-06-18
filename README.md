@@ -111,7 +111,38 @@ prompt : no estaria entendiendo el error que me tira en la linea del : if candid
 Chat me dijo que no podia comparar un dataframe con una lista, entonces me explico que si yo ponia el .lower() despues de: if candidatos["carrera"], osea en el programa queda if candidatos["carrera"].lower()== preferencias["carrera_de_preferencia"]:
 si iba a poder ver comparar que la carrerara que haga el candidato esta dentro de mis preferencias.
 
-
+----------------------------------------------------------------
+USO NUMERO 3: Uso de Justo Barbosa Moreira
+Explicacion de uso: Utilice claude para revisar la estructura de la función de filtrado y encarar las correcciones. Originalmente importabamos el dataframe a esa funcion, pero no era necesario ya que se hacia directamente en cargar_datos() de todos modos aproveche para que me marque posibles correciones en la estructura. Previo al prompt envie el documento del diseño para que sepa en que estaba trabajando
+Prompt: yo me tengo que encargar de la parte de la funcion filtrado e hice esto:
+import pandas as pd 
+"""
+df = pd.read_excel("dataframe.xlsx", dtype = {"id" : str, "sexo": str,
+                                              "nombre": str, "apellido": str, "carrera": str, 
+                                              "zona por la que vive": str, "hobbies": str,
+                                              "estilo musical favorito": str, "edad" : int, "altura": int,
+                                              "sexualidad": str, "instagram": str, "telefono": str})
+"""
+def filtrar_usuarios(df,genero, sexualidad, edad_min, edad_max, altura_min, id_usuario): 
+    
+    candidatos = df[df["id"] != id_usuario].copy()# esto fue con chat
+    candidatos = candidatos[
+        (candidatos["edad"] >= edad_min) &
+        (candidatos["edad"] <= edad_max) &
+        (candidatos["altura"] >= altura_min) 
+    ]
+                
+    if sexualidad == "homosexual": 
+        candidatos = candidatos[((candidatos["sexualidad"] == "homosexual") | (candidatos["sexualidad"] == "bisexual")) & (candidatos["sexo"] == genero)]
+    elif sexualidad == "heterosexual":
+        candidatos = candidatos[((candidatos["sexualidad"] == "heterosexual") | (candidatos["sexualidad"] == "bisexual")) & (candidatos["sexo"] != genero)]
+    else:
+        candidatos = candidatos[((candidatos["sexualidad"] == "heterosexual") & (candidatos["sexo"] != genero)) | (candidatos["sexualidad"] == "bisexual") | ((candidatos["sexualidad"] == "homosexual") & (candidatos["sexo"] == genero))]
+        
+        
+    
+    return candidatos
+el dataframe me parece que se puede borrar porque ya se abre directamente en el main #en ese momento del desarrollo del codigo abriamos desde el main, despues decidimos separarlo en otra funcion
 
 ...
 
