@@ -60,7 +60,7 @@ while True:
         try: 
             matches = obtener_match(df,id_usuario,candidatos, preferencias)
             if len(matches) == 0:
-                print("La lista no puede estar vacía")
+                print("No tenes ningun match, lo sentimos💔 ")
             mensaje = grafico_match(matches)
             grafico_zonas(matches)
             print(mensaje)
@@ -70,14 +70,14 @@ while True:
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
         
         while True:
-            continuar= input("\nTe gustaria continuar o deseas terminar? ")
+            continuar= input("\nTe gustaria continuar o deseas terminar (las opciones son (continuar - terminar))?:  ")
             if continuar.strip().lower() == "continuar":
                 break
             elif continuar.strip().lower() == "terminar": 
                 opcion = "3"
                 break
             else:
-                print("\nERROR, respuesta incorrecta. No era una opcion")
+                print("\nERROR, respuesta incorrecta. No era una de las opciones que te di. Escribi terminar o continuar")
                 
                 
             
