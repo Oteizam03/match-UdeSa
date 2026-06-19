@@ -53,6 +53,7 @@ def grafico_match(matches):
     mensaje = ""
     
     mensaje = "\n¡Hiciste match con estos usuarios!\n"
+    mensaje += "\n Estan ordenados por orden de coincidencia! Tu verdadero amor se encuentra arriba de todo!\n"
     mensaje += "==================================\n\n"
 
     for m in matches_ordenados:
