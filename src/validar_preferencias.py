@@ -50,7 +50,7 @@ def validar_rango(rango1, rango2, preferencia):
         Si rango1 es mayor que rango2.
     """
     if rango1 > rango2:
-        raise ValueError (f"E\nRROR, la {preferencia} minima no puede ser mayor a la {preferencia} maxima")
+        raise ValueError (f"\nERROR, la {preferencia} minima no puede ser mayor a la {preferencia} maxima")
 
 def validar_altura(altura): 
     """

@@ -70,7 +70,7 @@ while True:
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
         
         while True:
-            continuar= input("\nTe gustaria continuar o deseas terminar (las opciones son (continuar - terminar))?:  ")
+            continuar= input("\nTe gustaria continuar o deseas terminar (las opciones son (continuar - terminar)?:  ")
             if continuar.strip().lower() == "continuar":
                 break
             elif continuar.strip().lower() == "terminar": 

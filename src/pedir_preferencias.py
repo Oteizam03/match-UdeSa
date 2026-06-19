@@ -42,13 +42,13 @@ def pedir_preferencias(df):
         
         carrera : str Carrera que el usuario prefiere que estudie la otra persona.
         """
-    print("A continuacion le solicitaremos sus preferencias con respecto al otro para asi relacionarlo con posibles matches")
+    print("\nA continuacion le solicitaremos sus preferencias con respecto al otro para asi relacionarlo con posibles matches")
     print("----------------------------------------------------------------")
     
-    altura_min = pedir_con_validacion("ingrese la altura minima con el que estes dispuesto a salir en cm (ej: 155): ", validar_altura)
+    altura_min = pedir_con_validacion("\nIngrese la altura minima con el que estes dispuesto a salir en cm (ej: 155): ", validar_altura)
     print("----------------------------------------------------------------")
     while True: 
-        altura_max = pedir_con_validacion("ingrese la altura maxima con el que estes dispuesto a salir en cm (ej: 175): ", validar_altura)
+        altura_max = pedir_con_validacion("\nIngrese la altura maxima con el que estes dispuesto a salir en cm (ej: 175): ", validar_altura)
         print("----------------------------------------------------------------")
         try: 
             validar_rango(altura_min, altura_max, "altura")
@@ -57,10 +57,10 @@ def pedir_preferencias(df):
         except ValueError as e: 
             print (e)
     
-    edad_min =  pedir_con_validacion("ingrese la edad minima con la que estas dispuesto a salir: ", validar_edad)
+    edad_min =  pedir_con_validacion("\nIngrese la edad minima con la que estas dispuesto a salir: ", validar_edad)
     print("----------------------------------------------------------------")
     while True:
-        edad_max = pedir_con_validacion("ingrese la edad maxima con la que estas dispuesto a salir: ", validar_edad)
+        edad_max = pedir_con_validacion("\nIngrese la edad maxima con la que estas dispuesto a salir: ", validar_edad)
         print("----------------------------------------------------------------")
         try: 
             validar_rango(edad_min, edad_max, "edad")
@@ -68,16 +68,16 @@ def pedir_preferencias(df):
             break
         except ValueError as e:
             print (e)
-    print("Sabemos que pedimos muchos datos, SE PACIENTE, es para encntrar a tu AMOR PERFECTO")
+    print("\nSabemos que pedimos muchos datos, SE PACIENTE, es para encntrar a tu AMOR PERFECTO")
     print("----------------------------------------------------------------")
-    hobbie = pedir_con_validacion2(df, "ingrese UN hobbie que prefieras que haga el otro(lectura, gaming, musica, arte, deporte): ", validar_opcion, "hobbies", "hobbie")
+    hobbie = pedir_con_validacion2(df, "\nIngrese UN hobbie que prefieras que haga el otro(lectura, gaming, musica, arte, deporte): ", validar_opcion, "hobbies", "hobbie")
     print("----------------------------------------------------------------")
-    musica = pedir_con_validacion2(df, "ingrese el estilo musical que preferis del otro (pop/reggaeton/rock/cumbia/clasica): ", validar_opcion, "estilo musical favorito", "estilo de musica") 
+    musica = pedir_con_validacion2(df, "\nIngrese el estilo musical que preferis del otro (pop/reggaeton/rock/cumbia/clasica): ", validar_opcion, "estilo musical favorito", "estilo de musica") 
     print("----------------------------------------------------------------")
-    zona_donde_vive = pedir_con_validacion2(df, "ingrese la zona en la que preferis que viva el otro (norte/centro/sur): ", validar_opcion, "zona por la que vive", "zona")
+    zona_donde_vive = pedir_con_validacion2(df, "\nIngrese la zona en la que preferis que viva el otro (norte/centro/sur): ", validar_opcion, "zona por la que vive", "zona")
     print("----------------------------------------------------------------")
     while True: 
-        carrera = input("ingrese la carrera que te gustaria que estudie el otro, puede COPIAR Y PEGAR de la siguiente lista --------------------------------------- "                              
+        carrera = input("\nIngrese la carrera que te gustaria que estudie el otro, puede COPIAR Y PEGAR de la siguiente lista:"                              
                         
         "(abogacia,---- administracion de empresas,--- ciencia politica y gobierno, --- ciencias de la educacion, "
         "ciencias del comportamiento,--- comunicacion,---- contador publico,--- diseno, ----economia, --- economia empresarial, "

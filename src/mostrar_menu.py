@@ -8,7 +8,7 @@ Created on Thu Jun 18 15:12:14 2026
 
 def mostrar_menu():
     """
-    Esta funcion se encanra de mostrae un menu.
+    Esta funcion se encarga de mostrar un menu.
     
     parametros
     --------
