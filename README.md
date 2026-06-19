@@ -14,7 +14,7 @@ El programa se compone de 9 archivos con diferentes funciones, con la idea de qu
 
 Si bien todos participamos en el diseño del trabajo, para facilitar decidimos dividir tareas.
 
-La validación y pedido del usuario, y el pedido de preferencias fue elaborado por Milagros.
+El DataFrame, la validación y pedido del usuario, y el pedido de preferencias fue elaborado por Milagros.
 
 El main y la validación de preferencias fue elaborado por Sol.
 
@@ -22,18 +22,18 @@ las funciones de Milagros y Sol están conectadas para pedir y validar paso por 
 
 La carga de datos y el filtrado fue elaborado por Justo.
 
-El calculo de match fue elaborado por Uma.
+El obtener el match, el calculo de match y el menu fue elaborado por Uma.
 
-El grafico y readme fue elaborado por Victoria.
+Los gráficos, el mensaje de bienvenida y readme fue elaborado por Victoria.
 
 
 
 2\. Descripción de la fuente de datos:
 
 La fuente de datos es un DataFrame de 1500 registros que simula una API institucional con los legajos y diferentes datos personales de los alumnos de la universidad.
- Este incluye: Legajo, género, nombre, apellido, edad, zona en la que reside, hobbies, gusto de estilo musical, sexualidad, el teléfono y el Instagram.
-ACLARACION: se pueden usar dataframes que tengan mas filas mientras se respeten las columnas. 
-Ningun usuario real de UdeSA va a coincidir con los legajos del dataset dado que es un dataset de fantasia.
+Este incluye: Legajo, género, nombre, apellido, edad, zona en la que reside, hobbies, gusto de estilo musical, sexualidad, el teléfono y el Instagram.
+ACLARACION: se pueden usar DataFrames que tengan mas filas mientras se respeten las columnas. 
+Ningún usuario real de UdeSA va a coincidir con los legajos del dataset dado que es un dataset de fantasia.
 
 
 3\. Instrucciones de ejecución:
@@ -41,7 +41,7 @@ Ningun usuario real de UdeSA va a coincidir con los legajos del dataset dado que
 
 Al iniciar el programa se preguntará el número de legajo y las preferencias del usuario en relación con su futura pareja. 
 Luego se llevarán a cabo las funciones correspondientes de validación, carga y filtrado de datos para poder realizar el cálculo del match (porcentaje de coincidencia con los diferentes usuarios) y la ejecución de un gráfico que represente los niveles de match.
-IMPORTANTE: para probar el programa fijarse que el numero de legajo este en el DataFrame. Sino va a aparecer el error correspondiente a invalido. 
+IMPORTANTE: para probar el programa fijarse que el numero de legajo este en el DataFrame (un ejemplo: 47672). Sino va a aparecer el error correspondiente a invalido. 
 
 
 4\. Librerías utilizadas:
@@ -100,7 +100,7 @@ obtener_match: recorre los candidatos filtrados, calcula el porcentaje de compat
 
 grafico_match: grafico de barras horizontales que muestra la cantidad de usuarios con los que tuviste cierto porcentaje de match. 
 
-grafico_zonas: rafico de torta donde se puedan ver las zonas donde viven los usuarios con los que matcheaste. 
+grafico_zonas: grafico de torta donde se puedan ver las zonas donde viven los usuarios con los que macheaste. 
     
 ...
 
@@ -110,7 +110,6 @@ grafico_zonas: rafico de torta donde se puedan ver las zonas donde viven los usu
 
 Los resultados finales del programa van a ser un mensaje con los datos de los usuarios de coincidencias (nombre, apellido, legajo, teléfono e Instagram) para que se contacte con sus matches si es que lo desea. Luego se muestra un gráfico donde se puede ver los porcentajes de match y la cantidad de usuarios con lo que tuviste ese porcentaje, y un grafico de tortas que muestra las zona donde viven los usuarios con lo que tuviste match. 
 
-&#x20;
 
 8\. Declaración de uso de IA:
 
@@ -197,6 +196,24 @@ Explicación del uso: En el momento de validar los datos, si el usuario ingresab
 Prompt: Tengo este programa que le pide datos al usuario por consola. El problema es que cuando el usuario ingresa algo inválido, el error no aparece en el momento, sino recién después de que terminó de cargar TODOS los datos. Cómo puedo hacer para que la validación salte apenas se ingresa un dato incorrecto, en lugar de al final de todo? (Ademas del prompt, le subi todos los archivos de código del programa y el archivo de diseño)
 
 ----------------------------------------------------------------
+USO NUMERO 5: Uso de Victoria Azpeitia
+Explicación de uso: En IPC vimos gráficos entonces no hubo problemas en el armado del grafico pero era necesario arreglar detalles para que visualmente sea viable el gráfico. 
+
+Prompt: Estamos haciendo un trabajo en grupo donde se busca un match dentro de nuestra facultad. Con esta base de datos, donde se encuentran los alumnos de la facultad, se analizan datos como el genero, altura, hobbies, sexualidad, etc y buscamos filtrar las preferencias para luego obtener un porcentaje de coincidencia. En mi caso tengo que hacer el mensaje final y un grafico de barras donde muestro la cantidad de usuarios que hay por cada porcentaje. Te mando como copile los datos pero necesito ayuda con cómo hacer para que se vea en orden de mayor a menor el porcentaje de match. 
+
+Respuesta: 
+- Para ordenar la lista de mayor a menor:
+matches_ordenados = sorted(
+    matches,
+    key=lambda x: x[1],
+    reverse=True
+)
+
+- Dentro del grafico:
+plt.gca().invert_yaxis()  # mayor match arriba
+
+----------------------------------------------------------------
+
 uso en general cuando la consola nos tiraba un error para que nos ayude a comprender que significaba dicho error para luego poder pensar una solucion. 
 el prompt consistia en mandarle una foto de la consola y una pregunta como: nos salto este error, me explicas en lenguaje basico que significa el error para que se me ocurra una solucion. 
 
