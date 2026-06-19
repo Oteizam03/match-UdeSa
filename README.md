@@ -39,8 +39,8 @@ Ningún usuario real de UdeSA va a coincidir con los legajos del dataset dado qu
 3\. Instrucciones de ejecución:
 
 
-Al iniciar el programa se preguntará el número de legajo y las preferencias del usuario en relación con su futura pareja. 
-Luego se llevarán a cabo las funciones correspondientes de validación, carga y filtrado de datos para poder realizar el cálculo del match (porcentaje de coincidencia con los diferentes usuarios) y la ejecución de un gráfico que represente los niveles de match.
+Al iniciar el programa se aparecerá una descripción del programa, es decir, su objetivo y qué datos se van a solicitar a continuación. Seguida de esta bienvenida aparece un menu en el que preguntamos si necesita de la explicación nuevamente, si quiere empezar el programa o si desea salir. En el caso que quiera ver de nuevo de que se trata va a seleccionar la opción 1 y va a aparecer el mensaje inicial. Luego si toca la opción 2 se inicia el programa que preguntará el número de legajo y las preferencias del usuario en relación con su futura pareja. Luego se llevarán a cabo las funciones correspondientes de validación, carga y filtrado de datos para poder realizar el cálculo del match (porcentaje de coincidencia con los diferentes usuarios) y la ejecución de un gráfico que represente los niveles de match. Terminado el proceso de búsqueda de match y muestra de mensaje se preguntara si desea terminar el programa o continuar. En el caso de querer terminarlo se muestra un mensaje de salida y se corta el programa y en caso de querer continuar va a mostrarse el menu inicial donde las opciones van a ser las mismas que antes (1 repetir objetivo e instrucciones, 2 iniciar el programa, 3 salir del programa). 
+
 IMPORTANTE: para probar el programa fijarse que el numero de legajo este en el DataFrame (un ejemplo: 47672). Sino va a aparecer el error correspondiente a invalido. 
 
 
